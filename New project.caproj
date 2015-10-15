@@ -82,198 +82,10 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5246556934404327" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-8-0.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-8-0.png" />
                 </animation>
-                <animation framecount="8" loop="1" name="Running" pingpong="0" repeatcount="1" repeatto="0" sid="4729526810480975" speed="15">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-0-4.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-0-5.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-0-6.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-0-7.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-1-0.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-1-1.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-1-2.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-1-3.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="8" loop="1" name="Walking" pingpong="0" repeatcount="1" repeatto="0" sid="5993845737030462" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-0.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-1.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-2.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-3.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-4.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-5.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-6.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-7.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="3" loop="0" name="Jump" pingpong="0" repeatcount="1" repeatto="0" sid="2976508192554315" speed="25">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-5-2.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-5-3.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-5-4.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="3" loop="0" name="JumpDown" pingpong="0" repeatcount="1" repeatto="0" sid="5365919561664116" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-5-5.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-5-6.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-5-7.png">
-                        <collision-poly>
-                            <point x="0.59375" y="0" />
-                            <point x="0.59375" y="1" />
-                            <point x="0.390625" y="1" />
-                            <point x="0.40625" y="0" />
-                        </collision-poly>
-                    </frame>
+                <animation framecount="1" loop="0" name="Slide" pingpong="0" repeatcount="1" repeatto="0" sid="2708837446419836" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -479,10 +291,285 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Tilemap2" sid="3597840650407421">
+        <object-type name="TilemapMountain_lvl_1" sid="3597840650407421">
             <plugin id="Tilemap" />
             <behaviors>
                 <behavior-type name="Solid" sid="8143799399120552">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\Sašo\Documents\TheJanitorPrototype\Assets\WinterTileset.png" />
+            <tiles>
+                <tile id="1">
+                    <collision-poly>
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="3">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="5">
+                    <collision-poly>
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="9">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="15">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="19">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="21">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="23">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+            </tiles>
+        </object-type>
+        <object-type global="1" name="PlayerAnimations" sid="6694120917979481">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="wallHoldTimer" sid="5638071058663003" type="number" />
+                <instance-variable name="wallRun" sid="4013776871197225" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="8350235381894624">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="716879171805899" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-8-0.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="8" loop="1" name="Running" pingpong="0" repeatcount="1" repeatto="0" sid="2446497194064794" speed="15">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-0-4.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-0-5.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-0-6.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-0-7.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-1-0.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-1-1.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-1-2.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-1-3.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="8" loop="1" name="Walking" pingpong="0" repeatcount="1" repeatto="0" sid="4671305048640392" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-0.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-1.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-2.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-3.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-4.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-5.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-6.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-4-7.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="3" loop="0" name="Jump" pingpong="0" repeatcount="1" repeatto="0" sid="6145645754089472" speed="25">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-5-2.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-5-3.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-5-4.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="3" loop="0" name="JumpDown" pingpong="0" repeatcount="1" repeatto="0" sid="552012266349798" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-5-5.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-5-6.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-5-7.png">
+                        <collision-poly>
+                            <point x="0.59375" y="0" />
+                            <point x="0.59375" y="1" />
+                            <point x="0.390625" y="1" />
+                            <point x="0.40625" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TilemapMountain_SlideTester" sid="9312370796616395">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="2844052378689132">
                     <behavior id="solid" />
                 </behavior-type>
             </behaviors>
@@ -552,12 +639,14 @@
         <layout>Layout 1.xml</layout>
         <layout>Level 1.xml</layout>
         <layout>UI.xml</layout>
+        <layout>SlideTester.xml</layout>
         <layout>MainMenu.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Gameplay sheet.xml</event-sheet>
         <event-sheet>UI sheet.xml</event-sheet>
         <event-sheet>MainMenu sheet.xml</event-sheet>
+        <event-sheet>SlideTester sheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />

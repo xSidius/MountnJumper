@@ -3,7 +3,27 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Gameplay sheet</name>
     <events>
-        <event-group description="" sid="9002456867769247" title="Initialization" />
+        <event-group description="" sid="9002456867769247" title="Initialization">
+            <sub-events>
+                <event-block disabled="1" sid="4072104659286893">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="2447334150881675" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="6641450835086096" type="System">
+                            <param id="0" name="Object to create">PlayerAnimations</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">player.X</param>
+                            <param id="3" name="Y">player.Y</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="6551566040734019" type="PlayerAnimations">
+                            <param id="0" name="Pin to">player</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="631818763560375" title="Game Controller ">
             <sub-events>
                 <event-block disabled="1" sid="5450152055627478">
@@ -43,116 +63,6 @@
                         <action id="-7" name="Scroll to position" sid="3848449332144387" type="System">
                             <param id="0" name="X">player.X</param>
                             <param id="1" name="Y">player.Y</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="253079581919519" title="Animation controll">
-            <sub-events>
-                <event-block sid="946211047827375">
-                    <conditions>
-                        <condition behavior="Platform" id="7" name="On stopped" sid="997728552643288" type="player" />
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="6248766518769492" type="player">
-                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="576569063882891">
-                    <conditions>
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="9495879016676462" type="player" />
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="4028943852382583">
-                            <conditions>
-                                <condition behavior="Platform" id="1" name="Compare speed" sid="8634828483893263" type="player">
-                                    <param id="0" name="Comparison">4</param>
-                                    <param id="1" name="Speed">0</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="4848411194620854">
-                                    <conditions>
-                                        <condition behavior="Platform" id="1" name="Compare speed" sid="926543464065658" type="player">
-                                            <param id="0" name="Comparison">3</param>
-                                            <param id="1" name="Speed">50</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="768760548694983" type="player">
-                                            <param id="0" name="Animation">&quot;Walking&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="292335223005727">
-                                    <conditions>
-                                        <condition behavior="Platform" id="1" name="Compare speed" sid="7106362925554598" type="player">
-                                            <param id="0" name="Comparison">5</param>
-                                            <param id="1" name="Speed">100</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="9022492208976088" type="player">
-                                            <param id="0" name="Animation">&quot;Running&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="6" name="Set speed" sid="1621077613281601" type="player">
-                                            <param id="0" name="Speed">(player.Platform.Speed/330) * 20</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="3383704945754156">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="8816244939480727" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="4179560726347213" type="player">
-                                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="7879647596792671">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="9846903300154003" type="System" />
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="6646475464358429">
-                            <conditions>
-                                <condition behavior="Platform" id="4" name="Is falling" sid="1280535801908496" type="player" />
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="8717964003118938" type="player">
-                                    <param id="0" name="Animation">&quot;JumpDown&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="2026329353758487">
-                            <conditions />
-                            <actions />
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="4826763326078585">
-                    <conditions>
-                        <condition behavior="Platform" id="5" name="On jump" sid="9645992998252932" type="player" />
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="2208950810435449" type="player">
-                            <param id="0" name="Animation">&quot;Jump&quot;</param>
-                            <param id="1" name="From">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -460,5 +370,20 @@
                 </action>
             </actions>
         </event-block>
+        <event-group description="" sid="9923715359586343" title="Slide" />
+        <event-block sid="8897671753579716">
+            <conditions>
+                <condition id="2" name="Key is down" sid="5003383271987717" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="2909587690806949" type="player">
+                    <param id="0" name="Animation">&quot;Slide&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="4925658281382207" title="Animations" />
     </events>
 </c2eventsheet>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>SlideTester sheet</name>
+    <events>
+        <include>Gameplay sheet</include>
+        <event-block sid="5339153514137528">
+            <conditions />
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>
