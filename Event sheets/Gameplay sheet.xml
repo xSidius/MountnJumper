@@ -46,34 +46,10 @@
                         <condition id="-1" name="Every tick" sid="8198951412576255" type="System" />
                     </conditions>
                     <actions>
-                        <action disabled="1" id="0" name="Set text" sid="2228677639135485" type="debug_text">
+                        <action id="0" name="Set text" sid="2228677639135485" type="debug_text">
                             <param id="0" name="Text">player.Platform.Speed</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="8415941169537446">
-                            <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="2858405827076971" type="player">
-                                    <param id="0" name="Object">TilemapMountain_SlideTester</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="5202374973142273" type="debug_text">
-                                    <param id="0" name="Text">&quot;overlaping&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="3044458863691071">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="9793900961499394" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="5190044606578286" type="debug_text">
-                                    <param id="0" name="Text">&quot;not overlaping&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -433,7 +409,7 @@
                                     <param id="0" name="Max Speed">500</param>
                                 </action>
                                 <action behavior="Platform" id="8" name="Set vector X" sid="9376274217274075" type="player">
-                                    <param id="0" name="Vector X">player.Platform.VectorX+100</param>
+                                    <param id="0" name="Vector X">player.Platform.VectorX-100</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="5033849559586867" type="player">
                                     <param id="0" name="Instance variable">slideSpeed</param>
@@ -450,7 +426,7 @@
                                     <param id="0" name="Max Speed">500</param>
                                 </action>
                                 <action behavior="Platform" id="8" name="Set vector X" sid="7257178830118625" type="player">
-                                    <param id="0" name="Vector X">player.Platform.VectorX-100</param>
+                                    <param id="0" name="Vector X">player.Platform.VectorX+100</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="3708744148891612" type="player">
                                     <param id="0" name="Instance variable">slideSpeed</param>
