@@ -20,6 +20,7 @@
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
@@ -68,6 +69,7 @@
             <instance-variables>
                 <instance-variable name="wallHoldTimer" sid="7406337614172975" type="number" />
                 <instance-variable name="wallRun" sid="3837095989305583" type="number" />
+                <instance-variable name="standUp" sid="3968051180291669" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="1173370167233146">
@@ -79,13 +81,16 @@
                 <behavior-type name="ShadowCaster" sid="3101042803078952">
                     <behavior id="shadowcaster" />
                 </behavior-type>
+                <behavior-type name="Timer" sid="6609975247420049">
+                    <behavior id="Timer" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5246556934404327" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Desktop\character_sprites_splited\platformer_sprites_pixelized_0 [www.imagesplitter.net]-8-0.png" />
                 </animation>
                 <animation framecount="1" loop="0" name="Slide" pingpong="0" repeatcount="1" repeatto="0" sid="2708837446419836" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -632,6 +637,14 @@
                     </collision-poly>
                 </tile>
             </tiles>
+        </object-type>
+        <object-type name="Sprite5" sid="8203924398018769">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9641738598794626" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

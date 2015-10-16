@@ -46,10 +46,34 @@
                         <condition id="-1" name="Every tick" sid="8198951412576255" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="2228677639135485" type="debug_text">
+                        <action disabled="1" id="0" name="Set text" sid="2228677639135485" type="debug_text">
                             <param id="0" name="Text">player.Platform.Speed</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="8415941169537446">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="2858405827076971" type="player">
+                                    <param id="0" name="Object">TilemapMountain_SlideTester</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="5202374973142273" type="debug_text">
+                                    <param id="0" name="Text">&quot;overlaping&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3044458863691071">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="9793900961499394" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="5190044606578286" type="debug_text">
+                                    <param id="0" name="Text">&quot;not overlaping&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -370,20 +394,143 @@
                 </action>
             </actions>
         </event-block>
-        <event-group description="" sid="9923715359586343" title="Slide" />
-        <event-block sid="8897671753579716">
-            <conditions>
-                <condition id="2" name="Key is down" sid="5003383271987717" type="Keyboard">
-                    <param id="0" name="Key">83 (S)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="2909587690806949" type="player">
-                    <param id="0" name="Animation">&quot;Slide&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group description="" sid="9923715359586343" title="Slide">
+            <sub-events>
+                <event-block sid="8897671753579716">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="3033387986767805" type="player" />
+                        <condition id="2" name="Key is down" sid="5003383271987717" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="6024379660924176" type="player">
+                            <param id="0" name="Animation">&quot;Slide&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2909587690806949" type="player">
+                            <param id="0" name="Animation">&quot;Slide&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="5713150581578811" type="player">
+                            <param id="0" name="Duration">0.5</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;SlideEnded&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7039577880243274">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="2698892651455909" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="1457632383828141" type="player">
+                                    <param id="0" name="Max Speed">500</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="9376274217274075" type="player">
+                                    <param id="0" name="Vector X">player.Platform.VectorX+100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8058258307906797">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="8387224320154275" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="2621526726343108" type="player">
+                                    <param id="0" name="Max Speed">500</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="7257178830118625" type="player">
+                                    <param id="0" name="Vector X">player.Platform.VectorX-100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6638710531129181">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="9352775153886488" type="player">
+                            <param id="0" name="Tag">&quot;SlideEnded&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="478408517757594" type="player">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="8147470474210683" type="player">
+                            <param id="0" name="Max Speed">400</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3163514479287406">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="7161292825119252" type="player">
+                                    <param id="0" name="Object">TilemapMountain_SlideTester</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="8503743425860448" type="player">
+                                    <param id="0" name="Animation">&quot;Slide&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="521534189209019" type="player">
+                                    <param id="0" name="Instance variable">standUp</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8604044659651339">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="1560657471400573" type="player">
+                            <param id="0" name="Object">TilemapMountain_SlideTester</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="9560665393324185" type="player">
+                            <param id="0" name="Instance variable">standUp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="4185861411472519" type="player">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6007313837183769">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="9415552124058975" type="player">
+                                    <param id="0" name="Object">TilemapMountain_SlideTester</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="2962177330657539" type="player">
+                                    <param id="0" name="Animation">&quot;Slide&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1465940856629463">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="1368127050296866" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="1625251640930822" type="player">
+                                    <param id="0" name="Instance variable">standUp</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="4925658281382207" title="Animations" />
     </events>
 </c2eventsheet>

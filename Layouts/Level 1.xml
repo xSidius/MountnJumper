@@ -57,6 +57,7 @@
                     <instance-variables>
                         <wallHoldTimer>0</wallHoldTimer>
                         <wallRun>0</wallRun>
+                        <standUp>0</standUp>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -85,6 +86,7 @@
                                 <tag></tag>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Timer" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -92,7 +94,7 @@
                         <x>96</x>
                         <y>1024</y>
                         <z>0</z>
-                        <width>28</width>
+                        <width>20</width>
                         <height>40</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
