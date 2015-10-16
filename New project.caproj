@@ -70,6 +70,7 @@
                 <instance-variable name="wallHoldTimer" sid="7406337614172975" type="number" />
                 <instance-variable name="wallRun" sid="3837095989305583" type="number" />
                 <instance-variable name="standUp" sid="3968051180291669" type="number" />
+                <instance-variable name="slideSpeed" sid="124760735934113" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="1173370167233146">

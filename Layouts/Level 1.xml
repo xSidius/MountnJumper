@@ -58,6 +58,7 @@
                         <wallHoldTimer>0</wallHoldTimer>
                         <wallRun>0</wallRun>
                         <standUp>0</standUp>
+                        <slideSpeed>0</slideSpeed>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
