@@ -215,10 +215,17 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="4400658087785753">
+                    <conditions />
+                    <actions />
+                </event-block>
                 <event-block sid="1459494504203031">
                     <conditions>
                         <condition id="2" name="Key is down" sid="1042804695785424" type="Keyboard">
                             <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="7674563414137378" type="player">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -425,7 +432,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-group description="" sid="5930130816849397" title="Slide">
+        <event-group description="" sid="5930130816849397" title="Slide and Chrouch">
             <sub-events>
                 <event-block sid="8498929989423874">
                     <conditions>
@@ -505,10 +512,6 @@
                             <param id="1" name="Value">0</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="4400658087785753">
-                    <conditions />
-                    <actions />
                 </event-block>
             </sub-events>
         </event-group>
