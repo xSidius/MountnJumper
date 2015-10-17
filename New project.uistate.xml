@@ -14,11 +14,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="2">Level 1</layout>
         <layout order="3">UI</layout>
         <layout order="6">MainMenu</layout>
-        <layout order="7">SlideTester</layout>
-        <event-sheet active="1" order="1">Gameplay sheet</event-sheet>
+        <layout active="1" order="7">SlideTester</layout>
+        <event-sheet order="1">Gameplay sheet</event-sheet>
         <event-sheet order="4">UI sheet</event-sheet>
         <event-sheet order="5">MainMenu sheet</event-sheet>
         <event-sheet order="8">SlideTester sheet</event-sheet>
+        <event-sheet order="9">GameObjectInteration</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -49,6 +50,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/wall_45angle/" />
         <folder expanded="1" path="animation-folder/PlayerAnimations/" />
         <folder expanded="1" path="animation-folder/Sprite5/" />
-        <folder expanded="1" path="animation-folder/SpinningRock/" />
+        <folder expanded="1" path="animation-folder/Sprite7/" />
+        <folder expanded="1" path="animation-folder/Sprite8/" />
+        <folder expanded="1" path="animation-folder/Sprite9/" />
     </folders-expanded>
 </c2uistate>

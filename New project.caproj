@@ -20,7 +20,6 @@
     <used-behaviors>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
-        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
@@ -94,6 +93,9 @@
                 </animation>
                 <animation framecount="1" loop="0" name="Slide" pingpong="0" repeatcount="1" repeatto="0" sid="2708837446419836" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="Chrouch" pingpong="0" repeatcount="1" repeatto="0" sid="9492243334905012" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.136364" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -653,18 +655,51 @@
             <plugin id="TiledBg" />
             <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\CloudBackground.png" />
         </object-type>
-        <object-type name="SpinningRock" sid="5358594124991313">
+        <object-type name="Sprite7" sid="5225956321766646">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9669871175417888" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505376" original-source="D:\Projekt\Kevin-Sašo projekt\Assets\13.png">
+                        <collision-poly>
+                            <point x="0.0234375" y="0.0322581" />
+                            <point x="0.5" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.5" y="0.806452" />
+                            <point x="0.304688" y="0.580645" />
+                            <point x="0.09375" y="0.494624" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite8" sid="8466446366750276">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="Solid" sid="9185953191671931">
+                <behavior-type name="Solid" sid="7276424613326435">
                     <behavior id="solid" />
                 </behavior-type>
-                <behavior-type name="Rotate" sid="7836317670653641">
-                    <behavior id="Rotate" />
+                <behavior-type name="Sine" sid="1561481305821847">
+                    <behavior id="Sin" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5886231411384071" speed="5">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2934337077652563" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.515152" original-source="D:\Projekt\Kevin-Sašo projekt\Assets\WinterTileset.png">
+                        <collision-poly>
+                            <point x="0.992308" y="1" />
+                            <point x="0.976923" y="0.030303" />
+                            <point x="0.00769231" y="0.030303" />
+                            <point x="0.00769231" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite9" sid="8743167194957916">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7313869977460693" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Projekt\Kevin-Sašo projekt\Assets\WinterTileset.png">
                         <collision-poly>
                             <point x="0.2" y="0.2" />
@@ -694,6 +729,7 @@
         <event-sheet>UI sheet.xml</event-sheet>
         <event-sheet>MainMenu sheet.xml</event-sheet>
         <event-sheet>SlideTester sheet.xml</event-sheet>
+        <event-sheet>GameObjectInteration.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />
