@@ -15,11 +15,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="3">UI</layout>
         <layout order="6">MainMenu</layout>
         <layout order="7">SlideTester</layout>
-        <event-sheet active="1" order="1">Gameplay sheet</event-sheet>
+        <layout active="1" order="10">Level 2</layout>
+        <event-sheet order="1">Gameplay sheet</event-sheet>
         <event-sheet order="4">UI sheet</event-sheet>
         <event-sheet order="5">MainMenu sheet</event-sheet>
         <event-sheet order="8">SlideTester sheet</event-sheet>
         <event-sheet order="9">GameObjectInteration</event-sheet>
+        <event-sheet order="11">Level 2 sheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -36,21 +38,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
-        <folder expanded="1" path="animation-folder/floor_slim/" />
         <folder expanded="1" path="animation-folder/player/" />
-        <folder expanded="1" path="animation-folder/Sprite/" />
-        <folder expanded="1" path="animation-folder/Sprite2/" />
-        <folder expanded="1" path="animation-folder/Sprite3/" />
-        <folder expanded="1" path="animation-folder/Sprite4/" />
-        <folder expanded="1" path="animation-folder/Elivator/" />
-        <folder expanded="1" path="animation-folder/VerticalObjectLeft/" />
-        <folder expanded="1" path="animation-folder/Sprite6/" />
-        <folder expanded="1" path="animation-folder/wall_10m/" />
-        <folder expanded="1" path="animation-folder/wall_jump_through/" />
-        <folder expanded="1" path="animation-folder/wall_45angle/" />
         <folder expanded="1" path="animation-folder/PlayerAnimations/" />
-        <folder expanded="1" path="animation-folder/Sprite5/" />
-        <folder expanded="1" path="animation-folder/Sprite7/" />
         <folder expanded="1" path="animation-folder/Sprite8/" />
         <folder expanded="1" path="animation-folder/Sprite9/" />
     </folders-expanded>

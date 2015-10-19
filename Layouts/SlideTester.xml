@@ -91,7 +91,7 @@
                                 <gravity>2000</gravity>
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
-                                <jump-sustain>100</jump-sustain>
+                                <jump-sustain>0</jump-sustain>
                                 <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
@@ -117,7 +117,7 @@
                         <y>2080</y>
                         <z>0</z>
                         <width>20</width>
-                        <height>38</height>
+                        <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
