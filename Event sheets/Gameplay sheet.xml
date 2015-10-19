@@ -47,7 +47,7 @@
                         <condition id="-1" name="Every tick" sid="8198951412576255" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="2228677639135485" type="debug_text">
+                        <action id="0" name="Set text" sid="3668808539175459" type="debug_text">
                             <param id="0" name="Text">player.Platform.Speed</param>
                         </action>
                     </actions>
@@ -371,7 +371,7 @@
                                             </conditions>
                                             <actions>
                                                 <action behavior="Platform" id="8" name="Set vector X" sid="2187638475054769" type="player">
-                                                    <param id="0" name="Vector X">500</param>
+                                                    <param id="0" name="Vector X">player.WallJumpHoriz</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -403,7 +403,7 @@
                                             </conditions>
                                             <actions>
                                                 <action behavior="Platform" id="8" name="Set vector X" sid="8148574396900235" type="player">
-                                                    <param id="0" name="Vector X">-500</param>
+                                                    <param id="0" name="Vector X">-player.WallJumpHoriz</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -437,7 +437,7 @@
                                     </conditions>
                                     <actions>
                                         <action behavior="Platform" id="9" name="Set vector Y" sid="4857189769002625" type="player">
-                                            <param id="0" name="Vector Y">-500</param>
+                                            <param id="0" name="Vector Y">-player.WallJumpVert</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -468,7 +468,7 @@
                     </conditions>
                     <actions>
                         <action behavior="Platform" id="3" name="Set deceleration" sid="7672696375788483" type="player">
-                            <param id="0" name="Deceleration">1000</param>
+                            <param id="0" name="Deceleration">1500</param>
                         </action>
                         <action behavior="Platform" id="2" name="Set acceleration" sid="4029801897081181" type="player">
                             <param id="0" name="Acceleration">600</param>

@@ -59,6 +59,8 @@
                         <wallRun>0</wallRun>
                         <standUp>0</standUp>
                         <slideSpeed>0</slideSpeed>
+                        <WallJumpHoriz>300</WallJumpHoriz>
+                        <WallJumpVert>0</WallJumpVert>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">

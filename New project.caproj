@@ -57,6 +57,8 @@
                 <instance-variable name="wallRun" sid="3837095989305583" type="number" />
                 <instance-variable name="standUp" sid="3968051180291669" type="number" />
                 <instance-variable name="slideSpeed" sid="124760735934113" type="number" />
+                <instance-variable name="WallJumpHoriz" sid="5098799566031872" type="number" />
+                <instance-variable name="WallJumpVert" sid="416609634748544" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="1173370167233146">
@@ -504,7 +506,17 @@
         </object-type>
         <object-type name="TiledBackground2" sid="6114024998586455">
             <plugin id="TiledBg" />
-            <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\18.png" />
+            <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\819227edited.jpg" />
+        </object-type>
+        <object-type name="Tilemap" sid="5710169986307536">
+            <plugin id="Tilemap" />
+            <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\WinterTilesetBlured.png" />
+            <tiles />
+        </object-type>
+        <object-type name="TilemapStoneWallBlured" sid="5853734187646152">
+            <plugin id="Tilemap" />
+            <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\StoneWallTilesetBlured.png" />
+            <tiles />
         </object-type>
     </object-folder>
     <families />
