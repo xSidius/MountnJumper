@@ -28,7 +28,41 @@
             <use-render-cells>0</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
-            <instances />
+            <instances>
+                <instance type="Line" uid="5">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Anchored>0</Anchored>
+                        <xOffset>0</xOffset>
+                        <yOffset>0</yOffset>
+                        <EndX>0</EndX>
+                        <EndY>0</EndY>
+                        <theta>0</theta>
+                        <l>0</l>
+                        <theta0>0</theta0>
+                        <t>0</t>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2251</x>
+                        <y>407</y>
+                        <z>0</z>
+                        <width>3</width>
+                        <height>3</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
             <effects />
         </layer>
     </layers>

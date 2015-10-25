@@ -8,7 +8,7 @@
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>2m2oqhlgof90t</unique-id>
-    <saved-with-version>21202</saved-with-version>
+    <saved-with-version>21600</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -21,6 +21,7 @@
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -73,6 +74,9 @@
                 <behavior-type name="Timer" sid="6609975247420049">
                     <behavior id="Timer" />
                 </behavior-type>
+                <behavior-type name="CustomMovement" sid="5628031750040863">
+                    <behavior id="custom" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5246556934404327" speed="5">
@@ -91,6 +95,9 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
                 <animation framecount="1" loop="0" name="WallUp" pingpong="0" repeatcount="1" repeatto="0" sid="9667493094841797" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Swinging" pingpong="0" repeatcount="1" repeatto="0" sid="9956811321767647" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -475,25 +482,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite9" sid="8743167194957916">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7313869977460693" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Projekt\Kevin-Sašo projekt\Assets\WinterTileset.png">
-                        <collision-poly>
-                            <point x="0.2" y="0.2" />
-                            <point x="0.5" y="0" />
-                            <point x="0.8" y="0.2" />
-                            <point x="1" y="0.5" />
-                            <point x="0.8" y="0.8" />
-                            <point x="0.5" y="1" />
-                            <point x="0.2" y="0.8" />
-                            <point x="0" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="TilemapStoneWall" sid="8330972625593806">
             <plugin id="Tilemap" />
             <behaviors>
@@ -518,15 +506,43 @@
             <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\StoneWallTilesetBlured.png" />
             <tiles />
         </object-type>
+        <object-type name="TilemapStoneWall_lvl_2" sid="1080055924350756">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="7037328072372485">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\StoneWallTileset.png" />
+            <tiles />
+        </object-type>
+        <object-type name="Line" sid="5662758327590529">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Anchored" sid="4977767310127533" type="number" />
+                <instance-variable name="xOffset" sid="229887728979631" type="number" />
+                <instance-variable name="yOffset" sid="9930932689355457" type="number" />
+                <instance-variable name="EndX" sid="10156353787351" type="number" />
+                <instance-variable name="EndY" sid="526594194441347" type="number" />
+                <instance-variable name="theta" sid="1693827775716421" type="number" />
+                <instance-variable name="l" sid="9275330021581153" type="number" />
+                <instance-variable name="theta0" sid="5335183776825472" type="number" />
+                <instance-variable name="t" sid="9384834274920215" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9563360090387718" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Layout 1.xml</layout>
-        <layout>Level 1.xml</layout>
         <layout>UI.xml</layout>
         <layout>SlideTester.xml</layout>
         <layout>MainMenu.xml</layout>
         <layout>Level 2.xml</layout>
+        <layout>Layout 1.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Gameplay sheet.xml</event-sheet>
