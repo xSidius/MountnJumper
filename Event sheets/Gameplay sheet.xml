@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Gameplay sheet</name>
     <events>
+        <variable constant="0" name="rspeed" sid="8075979722211104" static="0" type="number">0</variable>
+        <variable constant="0" name="omega" sid="6350130948550585" static="0" type="number">0</variable>
         <include>GameObjectInteration</include>
         <event-group description="" sid="9002456867769247" title="Initialization">
             <sub-events>
@@ -341,9 +343,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-11" name="Add to" sid="2914759321791922" type="Line">
-                                    <param id="0" name="Instance variable">theta0</param>
-                                    <param id="1" name="Value">-1</param>
+                                <action id="-10" name="Add to" sid="2914759321791922" type="System">
+                                    <param id="0" name="Variable">rspeed</param>
+                                    <param id="1" name="Value">10</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -399,9 +401,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-11" name="Add to" sid="3640962838775343" type="Line">
-                                    <param id="0" name="Instance variable">theta0</param>
-                                    <param id="1" name="Value">1</param>
+                                <action id="-10" name="Add to" sid="3640962838775343" type="System">
+                                    <param id="0" name="Variable">rspeed</param>
+                                    <param id="1" name="Value">-10</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -568,6 +570,20 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <event-block sid="2263437655954312">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="9738357105408729" type="player">
+                                    <param id="0" name="Animation">&quot;Swinging&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="3811969568564828" type="Line">
+                                    <param id="0" name="Instance variable">Anchored</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="2360564993771605" type="Line" />
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
                 <variable constant="0" name="a0" sid="1906938795163117" static="0" type="number">0</variable>
@@ -594,20 +610,11 @@
                         </action>
                         <action id="-10" name="Set value" sid="1383310935705949" type="Line">
                             <param id="0" name="Instance variable">theta</param>
-                            <param id="1" name="Value">-(angle(Line.EndX,Line.EndY,Line.X,Line.Y) -90)</param>
+                            <param id="1" name="Value">(angle(Line.EndX,Line.EndY,Line.X,Line.Y) -90)</param>
                         </action>
                         <action id="-10" name="Set value" sid="4091705272086773" type="Line">
                             <param id="0" name="Instance variable">theta0</param>
                             <param id="1" name="Value">Line.theta</param>
-                        </action>
-                        <action behavior="Platform" id="5" name="Set gravity" sid="9133135004347579" type="player">
-                            <param id="0" name="Gravity">0</param>
-                        </action>
-                        <action behavior="Platform" id="8" name="Set vector X" sid="5092222549303034" type="player">
-                            <param id="0" name="Vector X">0</param>
-                        </action>
-                        <action behavior="Platform" id="9" name="Set vector Y" sid="8596315082169038" type="player">
-                            <param id="0" name="Vector Y">0</param>
                         </action>
                         <action id="-9" name="Set value" sid="1263894781188028" type="System">
                             <param id="0" name="Variable">a0</param>
@@ -625,6 +632,95 @@
                             <param id="0" name="Instance variable">yOffset</param>
                             <param id="1" name="Value">player.Y-a0</param>
                         </action>
+                        <action id="-9" name="Set value" sid="8706785868688206" type="System">
+                            <param id="0" name="Variable">rspeed</param>
+                            <param id="1" name="Value">-player.Platform.VectorX</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7575805136197628" type="System">
+                            <param id="0" name="Variable">omega</param>
+                            <param id="1" name="Value">rspeed/Line.l</param>
+                        </action>
+                        <action behavior="Platform" id="5" name="Set gravity" sid="9133135004347579" type="player">
+                            <param id="0" name="Gravity">0</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="5092222549303034" type="player">
+                            <param id="0" name="Vector X">0</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="8596315082169038" type="player">
+                            <param id="0" name="Vector Y">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Wall jumping logic</comment>
+                <variable constant="0" name="nTheta" sid="4610636032685275" static="0" type="number">0</variable>
+                <variable constant="0" name="diry" sid="35611610044463" static="0" type="number">0</variable>
+                <variable constant="0" name="rdirx" sid="919697058745329" static="0" type="number">0</variable>
+                <variable constant="0" name="rdiry" sid="6076454053444178" static="0" type="number">0</variable>
+                <variable constant="0" name="pnx" sid="7146961741657799" static="0" type="number">0</variable>
+                <variable constant="0" name="dirx" sid="3143441295808318" static="0" type="number">0</variable>
+                <variable constant="0" name="pny" sid="5798698738953051" static="0" type="number">0</variable>
+                <event-block sid="5500504275990586">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3714215989469629" type="Line">
+                            <param id="0" name="Instance variable">Anchored</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="2250578580995421" type="player">
+                            <param id="0" name="Vector X">0</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="7618086080155318" type="player">
+                            <param id="0" name="Vector Y">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="2305907056037397" type="System">
+                            <param id="0" name="Variable">rspeed</param>
+                            <param id="1" name="Value">-sin(Line.theta) *1500*dt</param>
+                        </action>
+                        <action id="0" name="Set text" sid="8087240536730926" type="debug_text">
+                            <param id="0" name="Text">rspeed</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8270805169113515" type="System">
+                            <param id="0" name="Variable">omega</param>
+                            <param id="1" name="Value">rspeed/Line.l *60</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5649376420774155" type="System">
+                            <param id="0" name="Variable">nTheta</param>
+                            <param id="1" name="Value">Line.theta+omega*dt</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7352429985365474" type="Line">
+                            <param id="0" name="Instance variable">theta</param>
+                            <param id="1" name="Value">nTheta</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7279231564844262" type="System">
+                            <param id="0" name="Variable">dirx</param>
+                            <param id="1" name="Value">player.X-Line.EndX</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6265595210754081" type="System">
+                            <param id="0" name="Variable">diry</param>
+                            <param id="1" name="Value">player.Y-Line.EndY</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9616878105614094" type="System">
+                            <param id="0" name="Variable">rdirx</param>
+                            <param id="1" name="Value">cos(omega*dt)*dirx - sin(omega*dt) * diry</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6907059681107259" type="System">
+                            <param id="0" name="Variable">rdiry</param>
+                            <param id="1" name="Value">sin(omega*dt) * dirx + cos(omega*dt) * diry</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2787833280544642" type="System">
+                            <param id="0" name="Variable">pnx</param>
+                            <param id="1" name="Value">rdirx +Line.EndX</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4826521788265448" type="System">
+                            <param id="0" name="Variable">pny</param>
+                            <param id="1" name="Value">rdiry+Line.EndY</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="3134510706574268" type="player">
+                            <param id="0" name="X">pnx</param>
+                            <param id="1" name="Y">pny</param>
+                        </action>
                     </actions>
                 </event-block>
                 <variable constant="0" name="theta" sid="9827701756741854" static="0" type="number">0</variable>
@@ -636,7 +732,7 @@
                 <variable constant="0" name="Variable2" sid="9571703464824195" static="0" type="number">0</variable>
                 <variable constant="0" name="Variable1" sid="5002180562826072" static="0" type="number">0</variable>
                 <variable constant="0" name="yn" sid="4959844884239919" static="0" type="number">0</variable>
-                <event-block sid="1174161298797559">
+                <event-block disabled="1" sid="1174161298797559">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="5387654591016627" type="Line">
                             <param id="0" name="Instance variable">Anchored</param>
@@ -710,7 +806,6 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>Wall jumping logic</comment>
             </sub-events>
         </event-group>
         <event-group description="" disabled="1" sid="5930130816849397" title="Slide and Chrouch">
@@ -829,7 +924,7 @@
                     <actions>
                         <action id="-11" name="Add to" sid="7236839099907271" type="Line">
                             <param id="0" name="Instance variable">EndX</param>
-                            <param id="1" name="Value">0* dt</param>
+                            <param id="1" name="Value">500* dt</param>
                         </action>
                         <action id="-11" name="Add to" sid="5425171979234246" type="Line">
                             <param id="0" name="Instance variable">EndY</param>
@@ -856,21 +951,29 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="2890330495477939">
+        <event-block sid="533225767306604">
             <conditions>
-                <condition id="2" name="Key is down" sid="9615724785377487" type="Keyboard">
-                    <param id="0" name="Key">87 (W)</param>
-                </condition>
+                <condition id="-1" name="Every tick" sid="3269662088804815" type="System" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="-9" name="Set value" sid="2034697599249355" type="System">
+                    <param id="0" name="Variable">rspeed</param>
+                    <param id="1" name="Value">rspeed-rspeed *1*dt</param>
+                </action>
+            </actions>
         </event-block>
-        <event-block sid="4538473445516143">
+        <event-block sid="2638547226050525">
             <conditions>
-                <condition id="2" name="Key is down" sid="8630212824518485" type="Keyboard">
-                    <param id="0" name="Key">83 (S)</param>
+                <condition id="0" name="On collision with another object" sid="515871726601619" type="player">
+                    <param id="0" name="Object">TilemapStoneWall_lvl_2</param>
                 </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action id="-9" name="Set value" sid="4168650784020946" type="System">
+                    <param id="0" name="Variable">rspeed</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
