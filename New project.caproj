@@ -60,6 +60,9 @@
                 <instance-variable name="slideSpeed" sid="124760735934113" type="number" />
                 <instance-variable name="WallJumpHoriz" sid="5098799566031872" type="number" />
                 <instance-variable name="WallJumpVert" sid="416609634748544" type="number" />
+                <instance-variable name="Anchored" sid="2415925444982158" type="number" />
+                <instance-variable name="MinLine" sid="2535964495517515" type="number" />
+                <instance-variable name="MaxLine" sid="5931667860738395" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="1173370167233146">

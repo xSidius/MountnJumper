@@ -4,6 +4,7 @@
     <name>Gameplay sheet</name>
     <events>
         <variable constant="0" name="rspeed" sid="8075979722211104" static="0" type="number">0</variable>
+        <variable constant="0" name="FirstSwing" sid="6241019882382003" static="0" type="number">1</variable>
         <variable constant="0" name="omega" sid="6350130948550585" static="0" type="number">0</variable>
         <include>GameObjectInteration</include>
         <event-group description="" sid="9002456867769247" title="Initialization">
@@ -12,7 +13,10 @@
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="2447334150881675" type="System" />
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-24" name="Move to top" sid="5885856433668573" type="TilemapStoneWall_lvl_2" />
+                        <action id="-25" name="Move to bottom" sid="8258585963108275" type="player" />
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -48,21 +52,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5060678084619578" title="Camera">
-            <sub-events>
-                <event-block sid="8932343579007269">
-                    <conditions>
-                        <condition id="-1" name="Every tick" sid="6367943299400623" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-7" name="Scroll to position" sid="3848449332144387" type="System">
-                            <param id="0" name="X">player.X</param>
-                            <param id="1" name="Y">player.Y</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
+        <event-group description="" sid="5060678084619578" title="Camera" />
         <event-group description="" sid="705772945378927" title="Player controlls">
             <sub-events>
                 <event-group description="" sid="6592181783067031" title="Get Player State">
@@ -100,15 +90,28 @@
                                                         <condition id="-8" name="Compare two values" sid="8165311038942721" type="System">
                                                             <param id="0" name="First value">player.Platform.VectorY</param>
                                                             <param id="1" name="Comparison">2</param>
-                                                            <param id="2" name="Second value">0</param>
+                                                            <param id="2" name="Second value">100</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="3592359229085134" type="player">
-                                                            <param id="0" name="Animation">&quot;WallUp&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                    </actions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="1728852838963341">
+                                                            <conditions>
+                                                                <condition id="2" name="Is playing" sid="2865006879761189" type="player">
+                                                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action behavior="Platform" id="9" name="Set vector Y" sid="409901107856336" type="player">
+                                                                    <param id="0" name="Vector Y">player.Platform.VectorY-50</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="3592359229085134" type="player">
+                                                                    <param id="0" name="Animation">&quot;WallUp&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
                                                 <event-block sid="7806175956524397">
                                                     <conditions>
@@ -136,10 +139,15 @@
                                 <event-block sid="4894270629328426">
                                     <conditions>
                                         <condition id="-22" name="Else" sid="6478279297486687" type="System" />
-                                        <condition id="-7" name="Compare instance variable" sid="3726905143214238" type="Line">
+                                        <condition id="-7" name="Compare instance variable" sid="3726905143214238" type="player">
                                             <param id="0" name="Instance variable">Anchored</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="9044704561639201" type="Line">
+                                            <param id="0" name="Instance variable">l</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">player.MinLine</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -345,7 +353,7 @@
                             <actions>
                                 <action id="-10" name="Add to" sid="2914759321791922" type="System">
                                     <param id="0" name="Variable">rspeed</param>
-                                    <param id="1" name="Value">10</param>
+                                    <param id="1" name="Value">400*dt</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -403,7 +411,7 @@
                             <actions>
                                 <action id="-10" name="Add to" sid="3640962838775343" type="System">
                                     <param id="0" name="Variable">rspeed</param>
-                                    <param id="1" name="Value">-10</param>
+                                    <param id="1" name="Value">-400*dt</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -417,42 +425,6 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="8091260276103441">
-                            <conditions>
-                                <condition id="2" name="Is playing" sid="2052559885362188" type="player">
-                                    <param id="0" name="Animation">&quot;Wall&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="Platform" id="9" name="Set vector Y" sid="5946892128432294" type="player">
-                                    <param id="0" name="Vector Y">-500</param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block sid="2426658460078145">
-                                    <conditions>
-                                        <condition behavior="Platform" id="10" name="Is by wall" sid="4674944593920048" type="player">
-                                            <param id="0" name="Side">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Platform" id="8" name="Set vector X" sid="2072474387687621" type="player">
-                                            <param id="0" name="Vector X">500</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="9310084179426131">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="4005172236824013" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Platform" id="8" name="Set vector X" sid="1033013184462646" type="player">
-                                            <param id="0" name="Vector X">-500</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
                         <event-block sid="8027621164692695">
                             <conditions>
                                 <condition id="2" name="Is playing" sid="7674563414137378" type="player">
@@ -490,10 +462,15 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="1392960647750266">
+                                        <event-block any="1" sid="1392960647750266">
                                             <conditions>
                                                 <condition id="2" name="Key is down" sid="7874168974395453" type="Keyboard">
                                                     <param id="0" name="Key">68 (D)</param>
+                                                </condition>
+                                                <condition disabled="1" id="-7" name="Compare instance variable" sid="7622883721623915" type="player">
+                                                    <param id="0" name="Instance variable">Anchored</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -510,6 +487,9 @@
                                                 <action behavior="Platform" id="8" name="Set vector X" sid="4733616267109979" type="player">
                                                     <param id="0" name="Vector X">200</param>
                                                 </action>
+                                                <action id="0" name="Set text" sid="1733727887690922" type="debug_text">
+                                                    <param id="0" name="Text">&quot;her&quot;</param>
+                                                </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
@@ -522,7 +502,7 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="4529882813032507">
+                                        <event-block any="1" sid="4529882813032507">
                                             <conditions>
                                                 <condition id="2" name="Key is down" sid="3508892469946281" type="Keyboard">
                                                     <param id="0" name="Key">65 (A)</param>
@@ -558,6 +538,24 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="2119524925675493">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="6672667082505496" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="8540042586268879" type="player">
+                                            <param id="0" name="Instance variable">Anchored</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="529095255629046" type="player">
+                                            <param id="0" name="Vector Y">100</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="8409226934218211" type="player">
+                                            <param id="0" name="Vector X">-100</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="4637244016693433">
                                     <conditions>
                                         <condition id="-22" name="Else" sid="1787314469190161" type="System" />
@@ -577,30 +575,63 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="3811969568564828" type="Line">
+                                <action id="-10" name="Set value" sid="3811969568564828" type="player">
                                     <param id="0" name="Instance variable">Anchored</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-9" name="Destroy" sid="2360564993771605" type="Line" />
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="6236609514904582" type="player">
+                                    <param id="0" name="Vector Y">-500</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="3614269740193765" type="Line" />
+                                <action behavior="Platform" id="8" name="Set vector X" sid="5212588826773873" type="player">
+                                    <param id="0" name="Vector X">-rspeed</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
                 <variable constant="0" name="a0" sid="1906938795163117" static="0" type="number">0</variable>
                 <variable constant="0" name="b0" sid="1646578719055293" static="0" type="number">0</variable>
+                <event-block sid="8787184125340181">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="7608263535990466" type="System">
+                            <param id="0" name="Object">Line</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="1570909156830455" type="Line">
+                            <param id="0" name="Instance variable">l</param>
+                            <param id="1" name="Value">distance(Line.X,Line.Y,Line.EndX,Line.EndY)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3260489373886816">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="541180201792197" type="System">
+                                    <param id="0" name="First value">Line.l</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">player.MaxLine</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="9047269908880229" type="Line" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="3351286140688566">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="5817276810719172" type="Line">
                             <param id="0" name="Object">TilemapStoneWall_lvl_2</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="8477132391860291" type="Line">
+                        <condition id="-7" name="Compare instance variable" sid="8477132391860291" type="player">
                             <param id="0" name="Instance variable">Anchored</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="8042433940122836" type="Line">
+                        <action id="-10" name="Set value" sid="8042433940122836" type="player">
                             <param id="0" name="Instance variable">Anchored</param>
                             <param id="1" name="Value">1</param>
                         </action>
@@ -616,26 +647,6 @@
                             <param id="0" name="Instance variable">theta0</param>
                             <param id="1" name="Value">Line.theta</param>
                         </action>
-                        <action id="-9" name="Set value" sid="1263894781188028" type="System">
-                            <param id="0" name="Variable">a0</param>
-                            <param id="1" name="Value">cos(Line.theta)*Line.l</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="2547377407525281" type="System">
-                            <param id="0" name="Variable">b0</param>
-                            <param id="1" name="Value">sin(Line.theta) * Line.l</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="8131465946262001" type="Line">
-                            <param id="0" name="Instance variable">xOffset</param>
-                            <param id="1" name="Value">player.X -b0</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="9472454372197269" type="Line">
-                            <param id="0" name="Instance variable">yOffset</param>
-                            <param id="1" name="Value">player.Y-a0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="8706785868688206" type="System">
-                            <param id="0" name="Variable">rspeed</param>
-                            <param id="1" name="Value">-player.Platform.VectorX</param>
-                        </action>
                         <action id="-9" name="Set value" sid="7575805136197628" type="System">
                             <param id="0" name="Variable">omega</param>
                             <param id="1" name="Value">rspeed/Line.l</param>
@@ -643,11 +654,15 @@
                         <action behavior="Platform" id="5" name="Set gravity" sid="9133135004347579" type="player">
                             <param id="0" name="Gravity">0</param>
                         </action>
-                        <action behavior="Platform" id="8" name="Set vector X" sid="5092222549303034" type="player">
+                        <action behavior="Platform" disabled="1" id="8" name="Set vector X" sid="5092222549303034" type="player">
                             <param id="0" name="Vector X">0</param>
                         </action>
-                        <action behavior="Platform" id="9" name="Set vector Y" sid="8596315082169038" type="player">
+                        <action behavior="Platform" disabled="1" id="9" name="Set vector Y" sid="8596315082169038" type="player">
                             <param id="0" name="Vector Y">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8417967427597594" type="System">
+                            <param id="0" name="Variable">FirstSwing</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -659,12 +674,45 @@
                 <variable constant="0" name="pnx" sid="7146961741657799" static="0" type="number">0</variable>
                 <variable constant="0" name="dirx" sid="3143441295808318" static="0" type="number">0</variable>
                 <variable constant="0" name="pny" sid="5798698738953051" static="0" type="number">0</variable>
+                <variable constant="0" name="theta" sid="9827701756741854" static="0" type="number">0</variable>
+                <event-block sid="9189458487760058">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3601752732806005" type="System">
+                            <param id="0" name="Variable">FirstSwing</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="6776305735649489" type="Line">
+                            <param id="0" name="Instance variable">l</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">player.MinLine</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7262464161327817" type="System">
+                            <param id="0" name="Variable">rspeed</param>
+                            <param id="1" name="Value">-player.Platform.VectorX -player.Platform.VectorY*0.75</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8250409941468892" type="System">
+                            <param id="0" name="Variable">FirstSwing</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="5500504275990586">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="3714215989469629" type="Line">
+                        <condition id="-7" name="Compare instance variable" sid="3714215989469629" type="player">
                             <param id="0" name="Instance variable">Anchored</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="409469344686482" type="Line">
+                            <param id="0" name="Instance variable">l</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">player.MinLine</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="4200630168002721" type="player">
+                            <param id="0" name="Animation">&quot;Swinging&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -674,16 +722,17 @@
                         <action behavior="Platform" id="9" name="Set vector Y" sid="7618086080155318" type="player">
                             <param id="0" name="Vector Y">0</param>
                         </action>
+                        <action id="-10" name="Set value" sid="3842872244858558" type="Line">
+                            <param id="0" name="Instance variable">theta</param>
+                            <param id="1" name="Value">(angle(Line.EndX,Line.EndY,Line.X,Line.Y) -90)</param>
+                        </action>
                         <action id="-10" name="Add to" sid="2305907056037397" type="System">
                             <param id="0" name="Variable">rspeed</param>
                             <param id="1" name="Value">-sin(Line.theta) *1500*dt</param>
                         </action>
-                        <action id="0" name="Set text" sid="8087240536730926" type="debug_text">
-                            <param id="0" name="Text">rspeed</param>
-                        </action>
                         <action id="-9" name="Set value" sid="8270805169113515" type="System">
                             <param id="0" name="Variable">omega</param>
-                            <param id="1" name="Value">rspeed/Line.l *60</param>
+                            <param id="1" name="Value">rspeed/Line.l *50</param>
                         </action>
                         <action id="-9" name="Set value" sid="5649376420774155" type="System">
                             <param id="0" name="Variable">nTheta</param>
@@ -720,89 +769,6 @@
                         <action id="-3" name="Set position" sid="3134510706574268" type="player">
                             <param id="0" name="X">pnx</param>
                             <param id="1" name="Y">pny</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <variable constant="0" name="theta" sid="9827701756741854" static="0" type="number">0</variable>
-                <variable constant="0" name="an" sid="4486384045469935" static="0" type="number">0</variable>
-                <variable constant="0" name="bn" sid="4350418807595616" static="0" type="number">0</variable>
-                <variable constant="0" name="t0" sid="7447148971525465" static="0" type="number">0</variable>
-                <variable constant="0" name="sqrtt" sid="3261936515735756" static="0" type="number">0</variable>
-                <variable constant="0" name="xn" sid="4650011157730434" static="0" type="number">0</variable>
-                <variable constant="0" name="Variable2" sid="9571703464824195" static="0" type="number">0</variable>
-                <variable constant="0" name="Variable1" sid="5002180562826072" static="0" type="number">0</variable>
-                <variable constant="0" name="yn" sid="4959844884239919" static="0" type="number">0</variable>
-                <event-block disabled="1" sid="1174161298797559">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="5387654591016627" type="Line">
-                            <param id="0" name="Instance variable">Anchored</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-11" name="Add to" sid="4238889973601413" type="Line">
-                            <param id="0" name="Instance variable">t</param>
-                            <param id="1" name="Value">dt</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="5146417107309781" type="System">
-                            <param id="0" name="Variable">t0</param>
-                            <param id="1" name="Value">2*pi* sqrt(Line.l/1500)</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="8060804295346831" type="System">
-                            <param id="0" name="Variable">sqrtt</param>
-                            <param id="1" name="Value">sqrt(1500/Line.l)*180/pi</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="2200365255778879" type="System">
-                            <param id="0" name="Variable">theta</param>
-                            <param id="1" name="Value">Line.theta0 * cos(sqrtt*Line.t)</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="2534680093147743" type="System">
-                            <param id="0" name="Variable">bn</param>
-                            <param id="1" name="Value">sin(theta)*Line.l</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="4621199500639262" type="System">
-                            <param id="0" name="Variable">xn</param>
-                            <param id="1" name="Value">Line.xOffset + bn</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="9505338604172801" type="System">
-                            <param id="0" name="Variable">an</param>
-                            <param id="1" name="Value">cos(theta) * Line.l</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="7001037243129278" type="System">
-                            <param id="0" name="Variable">yn</param>
-                            <param id="1" name="Value">Line.yOffset +an</param>
-                        </action>
-                        <action behavior="Platform" id="8" name="Set vector X" sid="6503702552461666" type="player">
-                            <param id="0" name="Vector X">0</param>
-                        </action>
-                        <action behavior="Platform" id="9" name="Set vector Y" sid="8317576091930099" type="player">
-                            <param id="0" name="Vector Y">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="8519238998437152" type="System">
-                            <param id="0" name="Variable">Variable1</param>
-                            <param id="1" name="Value">player.X-xn</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="7238444483845831" type="System">
-                            <param id="0" name="Variable">Variable2</param>
-                            <param id="1" name="Value">player.Y-yn</param>
-                        </action>
-                        <action behavior="Platform" id="9" name="Set vector Y" sid="2215531829093969" type="player">
-                            <param id="0" name="Vector Y">(yn-player.Y)*fps</param>
-                        </action>
-                        <action behavior="Platform" id="8" name="Set vector X" sid="4051485396056926" type="player">
-                            <param id="0" name="Vector X">(xn-player.X)*fps</param>
-                        </action>
-                        <action disabled="1" id="-3" name="Set position" sid="3167334331242348" type="player">
-                            <param id="0" name="X">xn</param>
-                            <param id="1" name="Y">yn</param>
-                        </action>
-                        <action id="0" name="Set text" sid="5454027616670617" type="debug_text">
-                            <param id="0" name="Text">round(Line.theta0) &amp; &quot; &quot;  &amp;round(theta) &amp;&quot; &quot; &amp;round(Line.t)</param>
-                        </action>
-                        <action disabled="1" id="-11" name="Add to" sid="2023235811747168" type="Line">
-                            <param id="0" name="Instance variable">theta0</param>
-                            <param id="1" name="Value">dt</param>
                         </action>
                     </actions>
                 </event-block>
@@ -915,20 +881,25 @@
             <sub-events>
                 <event-block sid="2784133803988974">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="6266249210343519" type="Line">
+                        <condition id="-7" name="Compare instance variable" sid="6266249210343519" type="player">
                             <param id="0" name="Instance variable">Anchored</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="914764290143243" type="System">
+                            <param id="0" name="First value">Line.l</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">player.MaxLine</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-11" name="Add to" sid="7236839099907271" type="Line">
                             <param id="0" name="Instance variable">EndX</param>
-                            <param id="1" name="Value">500* dt</param>
+                            <param id="1" name="Value">1000* dt</param>
                         </action>
                         <action id="-11" name="Add to" sid="5425171979234246" type="Line">
                             <param id="0" name="Instance variable">EndY</param>
-                            <param id="1" name="Value">-500*dt</param>
+                            <param id="1" name="Value">-1000*dt</param>
                         </action>
                     </actions>
                 </event-block>
@@ -958,7 +929,7 @@
             <actions>
                 <action id="-9" name="Set value" sid="2034697599249355" type="System">
                     <param id="0" name="Variable">rspeed</param>
-                    <param id="1" name="Value">rspeed-rspeed *1*dt</param>
+                    <param id="1" name="Value">rspeed-rspeed *0.8*dt</param>
                 </action>
             </actions>
         </event-block>
@@ -972,6 +943,20 @@
                 <action id="-9" name="Set value" sid="4168650784020946" type="System">
                     <param id="0" name="Variable">rspeed</param>
                     <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2540224453463874">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="4513445366508093" type="System" />
+            </conditions>
+            <actions>
+                <action id="-7" name="Scroll to position" sid="5922765720781626" type="System">
+                    <param id="0" name="X">player.X</param>
+                    <param id="1" name="Y">player.Y</param>
+                </action>
+                <action disabled="1" id="0" name="Set text" sid="1615657462577286" type="debug_text">
+                    <param id="0" name="Text">player.Anchored</param>
                 </action>
             </actions>
         </event-block>

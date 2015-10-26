@@ -82,6 +82,9 @@
                         <slideSpeed>0</slideSpeed>
                         <WallJumpHoriz>300</WallJumpHoriz>
                         <WallJumpVert>0</WallJumpVert>
+                        <Anchored>0</Anchored>
+                        <MinLine>100</MinLine>
+                        <MaxLine>200</MaxLine>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -90,8 +93,8 @@
                                 <acceleration>600</acceleration>
                                 <deceleration>1000</deceleration>
                                 <jump-strength>500</jump-strength>
-                                <gravity>2000</gravity>
-                                <max-fall-speed>1000</max-fall-speed>
+                                <gravity>1500</gravity>
+                                <max-fall-speed>800</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
                                 <default-controls>No</default-controls>
