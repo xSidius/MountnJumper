@@ -14,8 +14,8 @@
                         <condition id="-2" name="On start of layout" sid="2447334150881675" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-24" name="Move to top" sid="5885856433668573" type="TilemapStoneWall_lvl_2" />
-                        <action id="-25" name="Move to bottom" sid="8258585963108275" type="player" />
+                        <action id="-25" name="Move to bottom" sid="5885856433668573" type="TilemapStoneWall_lvl_2" />
+                        <action id="-24" name="Move to top" sid="8258585963108275" type="player" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -55,80 +55,171 @@
         <event-group description="" sid="5060678084619578" title="Camera" />
         <event-group description="" sid="705772945378927" title="Player controlls">
             <sub-events>
+                <variable constant="0" name="StateBefore" sid="3406157777552562" static="0" type="text"></variable>
                 <event-group description="" sid="6592181783067031" title="Get Player State">
                     <sub-events>
-                        <event-block sid="8400815844870823">
+                        <event-block sid="6391726117686858">
                             <conditions>
-                                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="3699948418161325" type="player" />
+                                <condition id="-1" name="Every tick" sid="7299985530777388" type="System" />
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="2982906613835709" type="System">
+                                    <param id="0" name="Variable">StateBefore</param>
+                                    <param id="1" name="Value">player.AnimationName</param>
+                                </action>
+                                <action id="0" name="Set text" sid="4839576854373221" type="debug_text">
+                                    <param id="0" name="Text">StateBefore</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6161285146741107">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="5501326786112329" type="player" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="6971042331796624" type="player">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
                             <sub-events>
-                                <event-block any="1" sid="4831794175823078">
+                                <event-block sid="9077675820439701">
                                     <conditions>
-                                        <condition behavior="Platform" id="10" name="Is by wall" sid="3536171481771949" type="player">
-                                            <param id="0" name="Side">1</param>
+                                        <condition id="-7" name="Compare instance variable" sid="1617026071018325" type="player">
+                                            <param id="0" name="Instance variable">Anchored</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
                                         </condition>
-                                        <condition behavior="Platform" id="10" name="Is by wall" sid="520988038138969" type="player">
+                                        <condition id="-7" name="Compare instance variable" sid="1886688573753196" type="Line">
+                                            <param id="0" name="Instance variable">l</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">player.MinLine</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="881465102849466" type="player">
+                                            <param id="0" name="Animation">&quot;Swinging&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="8414154770755948">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="1407828911186529" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="4517972914755116" type="player">
+                                    <param id="0" name="Animation">&quot;Jumping&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="8813215452605087">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4490386194124528" type="player">
+                                            <param id="0" name="Instance variable">Anchored</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="6216236688345306" type="Line">
+                                            <param id="0" name="Instance variable">l</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">player.MinLine</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="4963882770643265" type="player">
+                                            <param id="0" name="Animation">&quot;Swinging&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" sid="501713067650176">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="1589551453731827" type="player">
                                             <param id="0" name="Side">0</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="4095465283140142" type="player">
+                                            <param id="0" name="Side">1</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="116237029453404">
+                                        <event-block sid="230251099984831">
                                             <conditions>
-                                                <condition id="2" inverted="1" name="Is playing" sid="7594490029019933" type="player">
-                                                    <param id="0" name="Animation">&quot;WallDown&quot;</param>
+                                                <condition id="-8" name="Compare two values" sid="2158091916360711" type="System">
+                                                    <param id="0" name="First value">player.Platform.VectorY</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Second value">0</param>
                                                 </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="3561847102881988" type="player">
-                                                    <param id="0" name="Animation">&quot;WallHold&quot;</param>
-                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="487453788260542" type="player">
+                                                    <param id="0" name="Animation">&quot;WallUp&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2003114578279811">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="3047326586539508" type="System" />
                                             </conditions>
                                             <actions />
                                             <sub-events>
-                                                <event-block sid="9474926753206988">
+                                                <event-block any="1" sid="5711199616793224">
                                                     <conditions>
-                                                        <condition id="-8" name="Compare two values" sid="8165311038942721" type="System">
-                                                            <param id="0" name="First value">player.Platform.VectorY</param>
-                                                            <param id="1" name="Comparison">2</param>
-                                                            <param id="2" name="Second value">100</param>
+                                                        <condition id="-14" name="Compare variable" sid="6428197262554842" type="System">
+                                                            <param id="0" name="Variable">StateBefore</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;WallUp&quot;</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="14591889321511" type="System">
+                                                            <param id="0" name="Variable">StateBefore</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;Jumping&quot;</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions />
-                                                    <sub-events>
-                                                        <event-block sid="1728852838963341">
-                                                            <conditions>
-                                                                <condition id="2" name="Is playing" sid="2865006879761189" type="player">
-                                                                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                                                                </condition>
-                                                            </conditions>
-                                                            <actions>
-                                                                <action behavior="Platform" id="9" name="Set vector Y" sid="409901107856336" type="player">
-                                                                    <param id="0" name="Vector Y">player.Platform.VectorY-50</param>
-                                                                </action>
-                                                                <action id="4" name="Set animation" sid="3592359229085134" type="player">
-                                                                    <param id="0" name="Animation">&quot;WallUp&quot;</param>
-                                                                    <param id="1" name="From">1</param>
-                                                                </action>
-                                                            </actions>
-                                                        </event-block>
-                                                    </sub-events>
-                                                </event-block>
-                                                <event-block sid="7806175956524397">
-                                                    <conditions>
-                                                        <condition id="-22" name="Else" sid="1830794565002544" type="System" />
-                                                    </conditions>
                                                     <actions>
-                                                        <action id="4" name="Set animation" sid="7296746403306727" type="player">
+                                                        <action behavior="Timer" id="0" name="Start timer" sid="5246750750623081" type="player">
+                                                            <param id="0" name="Duration">0.5</param>
+                                                            <param id="1" name="Type">0</param>
+                                                            <param id="2" name="Tag">&quot;Slip&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="9" name="Set vector Y" sid="3398663694447031" type="player">
+                                                            <param id="0" name="Vector Y">0</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="4673937480713696" type="player">
                                                             <param id="0" name="Animation">&quot;WallHold&quot;</param>
                                                             <param id="1" name="From">1</param>
                                                         </action>
-                                                        <action behavior="Platform" id="9" name="Set vector Y" sid="4269859971954432" type="player">
-                                                            <param id="0" name="Vector Y">0</param>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="7613953008721955">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="5205152586204739" type="System" />
+                                                        <condition id="-14" name="Compare variable" sid="9597275528393703" type="System">
+                                                            <param id="0" name="Variable">StateBefore</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;WallDown&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="9027729950031442" type="player">
+                                                            <param id="0" name="Animation">&quot;WallDown&quot;</param>
+                                                            <param id="1" name="From">1</param>
                                                         </action>
-                                                        <action behavior="Timer" id="0" name="Start timer" sid="9321388721512172" type="player">
-                                                            <param id="0" name="Duration">0.25</param>
-                                                            <param id="1" name="Type">0</param>
-                                                            <param id="2" name="Tag">&quot;WallSlip&quot;</param>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="9931703065756765">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="2208391226716407" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="6149851104469274" type="player">
+                                                            <param id="0" name="Animation">&quot;WallHold&quot;</param>
+                                                            <param id="1" name="From">1</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -136,59 +227,16 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="4894270629328426">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="6478279297486687" type="System" />
-                                        <condition id="-7" name="Compare instance variable" sid="3726905143214238" type="player">
-                                            <param id="0" name="Instance variable">Anchored</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="9044704561639201" type="Line">
-                                            <param id="0" name="Instance variable">l</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">player.MinLine</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="7604363344077965" type="player">
-                                            <param id="0" name="Animation">&quot;Swinging&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="6385226301103403">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="2064032033663915" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="1295718680402007" type="player">
-                                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="73491401458483">
+                        <event-block sid="6085508062233251">
                             <conditions>
-                                <condition id="-22" name="Else" sid="2373032087170831" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="2129674270795567" type="player">
-                                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="1941082331737116">
-                            <conditions>
-                                <condition behavior="Timer" id="0" name="On timer" sid="3460546876257125" type="player">
-                                    <param id="0" name="Tag">&quot;WallSlip&quot;</param>
+                                <condition behavior="Timer" id="0" name="On timer" sid="4101612925666411" type="player">
+                                    <param id="0" name="Tag">&quot;Slip&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="5568671801395235" type="player">
+                                <action id="4" name="Set animation" sid="6465564339619484" type="player">
                                     <param id="0" name="Animation">&quot;WallDown&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
@@ -196,21 +244,6 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-block sid="8603272883156774">
-                    <conditions>
-                        <condition id="2" name="Is playing" sid="3586044253495861" type="player">
-                            <param id="0" name="Animation">&quot;Chrouch&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Platform" id="1" name="Set max speed" sid="3086019207897373" type="player">
-                            <param id="0" name="Max Speed">200</param>
-                        </action>
-                        <action behavior="Platform" id="2" name="Set acceleration" sid="4127947756784116" type="player">
-                            <param id="0" name="Acceleration">200</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="2572534074983206">
                     <conditions>
                         <condition id="2" name="Is playing" sid="6974318477961289" type="player">
@@ -232,18 +265,24 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="1602393767916706">
+                <event-block sid="1420169497476744">
                     <conditions>
-                        <condition id="2" name="Is playing" sid="7914201557135112" type="player">
-                            <param id="0" name="Animation">&quot;Slide&quot;</param>
+                        <condition id="2" name="Is playing" sid="1605586880802708" type="player">
+                            <param id="0" name="Animation">&quot;Jumping&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Platform" id="1" name="Set max speed" sid="1191728600992923" type="player">
-                            <param id="0" name="Max Speed">500</param>
+                        <action behavior="Platform" id="3" name="Set deceleration" sid="9501488357792073" type="player">
+                            <param id="0" name="Deceleration">750</param>
                         </action>
-                        <action behavior="Platform" id="3" name="Set deceleration" sid="9034863129589855" type="player">
-                            <param id="0" name="Deceleration">500</param>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="9051905834576378" type="player">
+                            <param id="0" name="Acceleration">500</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="7874026038123062" type="player">
+                            <param id="0" name="Max Speed">400</param>
+                        </action>
+                        <action behavior="Platform" id="5" name="Set gravity" sid="6474285298386477" type="player">
+                            <param id="0" name="Gravity">1500</param>
                         </action>
                     </actions>
                 </event-block>
@@ -315,24 +354,13 @@
                                     <param id="0" name="Animation">&quot;Default&quot;</param>
                                 </condition>
                                 <condition id="2" name="Is playing" sid="1367926824682299" type="player">
-                                    <param id="0" name="Animation">&quot;Chrouch&quot;</param>
+                                    <param id="0" name="Animation">&quot;Jumping&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
                                 <event-block any="1" sid="9053236025673111">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="6830160770138412" type="player">
-                                            <param id="0" name="Instance variable">wallRun</param>
-                                            <param id="1" name="Comparison">1</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="5784684413303162" type="player">
-                                            <param id="0" name="Instance variable">wallHoldTimer</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">0.25</param>
-                                        </condition>
-                                    </conditions>
+                                    <conditions />
                                     <actions>
                                         <action behavior="Platform" id="7" name="Simulate control" sid="1571192706685998" type="player">
                                             <param id="0" name="Control">0</param>
@@ -373,24 +401,13 @@
                                     <param id="0" name="Animation">&quot;Default&quot;</param>
                                 </condition>
                                 <condition id="2" name="Is playing" sid="3056582639332581" type="player">
-                                    <param id="0" name="Animation">&quot;Chrouch&quot;</param>
+                                    <param id="0" name="Animation">&quot;Jumping&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
                                 <event-block any="1" sid="7592813420620835">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="6911693465029381" type="player">
-                                            <param id="0" name="Instance variable">wallRun</param>
-                                            <param id="1" name="Comparison">1</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="6946498269945592" type="player">
-                                            <param id="0" name="Instance variable">wallHoldTimer</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">0.25</param>
-                                        </condition>
-                                    </conditions>
+                                    <conditions />
                                     <actions>
                                         <action behavior="Platform" id="7" name="Simulate control" sid="4380724256690375" type="player">
                                             <param id="0" name="Control">1</param>
@@ -460,35 +477,31 @@
                                             <param id="0" name="Side">0</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="1078975717604527" type="player">
+                                            <param id="0" name="Vector Y">-player.WallJumpVert</param>
+                                        </action>
+                                    </actions>
                                     <sub-events>
-                                        <event-block any="1" sid="1392960647750266">
+                                        <event-block sid="3599745067961462">
                                             <conditions>
-                                                <condition id="2" name="Key is down" sid="7874168974395453" type="Keyboard">
+                                                <condition id="2" name="Key is down" sid="4762463183236333" type="Keyboard">
                                                     <param id="0" name="Key">68 (D)</param>
-                                                </condition>
-                                                <condition disabled="1" id="-7" name="Compare instance variable" sid="7622883721623915" type="player">
-                                                    <param id="0" name="Instance variable">Anchored</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="8" name="Set vector X" sid="2187638475054769" type="player">
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="6075906146905695" type="player">
                                                     <param id="0" name="Vector X">player.WallJumpHoriz</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="3419284782279358">
+                                        <event-block sid="8063902172744341">
                                             <conditions>
-                                                <condition id="-22" name="Else" sid="4579161898612626" type="System" />
+                                                <condition id="-22" name="Else" sid="5532814122456913" type="System" />
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="8" name="Set vector X" sid="4733616267109979" type="player">
-                                                    <param id="0" name="Vector X">200</param>
-                                                </action>
-                                                <action id="0" name="Set text" sid="1733727887690922" type="debug_text">
-                                                    <param id="0" name="Text">&quot;her&quot;</param>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="9402162243862645" type="player">
+                                                    <param id="0" name="Vector X">player.WallJumpHoriz /2</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -500,71 +513,35 @@
                                             <param id="0" name="Side">1</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="3114939263825653" type="player">
+                                            <param id="0" name="Vector Y">-player.WallJumpVert</param>
+                                        </action>
+                                    </actions>
                                     <sub-events>
-                                        <event-block any="1" sid="4529882813032507">
+                                        <event-block sid="4192518886263112">
                                             <conditions>
-                                                <condition id="2" name="Key is down" sid="3508892469946281" type="Keyboard">
+                                                <condition id="2" name="Key is down" sid="6872842069295012" type="Keyboard">
                                                     <param id="0" name="Key">65 (A)</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="8" name="Set vector X" sid="8148574396900235" type="player">
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="2433074843485387" type="player">
                                                     <param id="0" name="Vector X">-player.WallJumpHoriz</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="7803559802438727">
+                                        <event-block sid="5169143934508942">
                                             <conditions>
-                                                <condition id="-22" name="Else" sid="1781465823946985" type="System" />
+                                                <condition id="-22" name="Else" sid="7438691453773275" type="System" />
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="8" name="Set vector X" sid="9247722732482085" type="player">
-                                                    <param id="0" name="Vector X">-200</param>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="1675773394374165" type="player">
+                                                    <param id="0" name="Vector X">-player.WallJumpHoriz /2</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
-                                </event-block>
-                                <event-block sid="7823632445730328">
-                                    <conditions>
-                                        <condition id="2" name="Key is down" sid="9695130515773687" type="Keyboard">
-                                            <param id="0" name="Key">83 (S)</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="8008736199590399" type="player">
-                                            <param id="0" name="Vector Y">100</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="2119524925675493">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="6672667082505496" type="System" />
-                                        <condition id="-7" name="Compare instance variable" sid="8540042586268879" type="player">
-                                            <param id="0" name="Instance variable">Anchored</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="529095255629046" type="player">
-                                            <param id="0" name="Vector Y">100</param>
-                                        </action>
-                                        <action behavior="Platform" id="8" name="Set vector X" sid="8409226934218211" type="player">
-                                            <param id="0" name="Vector X">-100</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="4637244016693433">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="1787314469190161" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="4857189769002625" type="player">
-                                            <param id="0" name="Vector Y">-player.WallJumpVert</param>
-                                        </action>
-                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -580,7 +557,7 @@
                                     <param id="1" name="Value">0</param>
                                 </action>
                                 <action behavior="Platform" id="9" name="Set vector Y" sid="6236609514904582" type="player">
-                                    <param id="0" name="Vector Y">-500</param>
+                                    <param id="0" name="Vector Y">-player.Platform.JumpStrength</param>
                                 </action>
                                 <action id="-9" name="Destroy" sid="3614269740193765" type="Line" />
                                 <action behavior="Platform" id="8" name="Set vector X" sid="5212588826773873" type="player">
@@ -590,8 +567,6 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <variable constant="0" name="a0" sid="1906938795163117" static="0" type="number">0</variable>
-                <variable constant="0" name="b0" sid="1646578719055293" static="0" type="number">0</variable>
                 <event-block sid="8787184125340181">
                     <conditions>
                         <condition id="-19" name="Pick all" sid="7608263535990466" type="System">
@@ -615,6 +590,10 @@
                             </conditions>
                             <actions>
                                 <action id="-9" name="Destroy" sid="9047269908880229" type="Line" />
+                                <action id="-10" name="Set value" sid="3357125609945829" type="player">
+                                    <param id="0" name="Instance variable">Anchored</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -691,7 +670,7 @@
                     <actions>
                         <action id="-9" name="Set value" sid="7262464161327817" type="System">
                             <param id="0" name="Variable">rspeed</param>
-                            <param id="1" name="Value">-player.Platform.VectorX -player.Platform.VectorY*0.75</param>
+                            <param id="1" name="Value">-player.Platform.VectorX</param>
                         </action>
                         <action id="-9" name="Set value" sid="8250409941468892" type="System">
                             <param id="0" name="Variable">FirstSwing</param>
@@ -839,15 +818,10 @@
                             <param id="0" name="Animation">&quot;Default&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
-                        <action id="-10" name="Set value" sid="9008728336886428" type="player">
-                            <param id="0" name="Instance variable">standUp</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="4925658281382207" title="Animations" />
         <event-block sid="3967256471077109">
             <conditions>
                 <condition id="0" name="On key pressed" sid="6534615808574383" type="Keyboard">
@@ -870,6 +844,30 @@
                     <param id="1" name="Value">Line.Y</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="3702054572903179">
+                    <conditions>
+                        <condition id="7" name="Is mirrored" sid="3361034059296823" type="player" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="6663319305385007" type="Line">
+                            <param id="0" name="Instance variable">Mirrored</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4240878897066048">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="3986945598233262" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="4355877657229889" type="Line">
+                            <param id="0" name="Instance variable">Mirrored</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="4161914942145109">
             <conditions>
@@ -892,16 +890,43 @@
                             <param id="2" name="Second value">player.MaxLine</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-11" name="Add to" sid="7236839099907271" type="Line">
-                            <param id="0" name="Instance variable">EndX</param>
-                            <param id="1" name="Value">1000* dt</param>
-                        </action>
-                        <action id="-11" name="Add to" sid="5425171979234246" type="Line">
-                            <param id="0" name="Instance variable">EndY</param>
-                            <param id="1" name="Value">-1000*dt</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2567881998610081">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7354730048926733" type="Line">
+                                    <param id="0" name="Instance variable">Mirrored</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="8117170401036286" type="Line">
+                                    <param id="0" name="Instance variable">EndX</param>
+                                    <param id="1" name="Value">1000* dt</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="3697075132306364" type="Line">
+                                    <param id="0" name="Instance variable">EndY</param>
+                                    <param id="1" name="Value">-1000*dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9238273272052653">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2950348225988939" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="2800243977648116" type="Line">
+                                    <param id="0" name="Instance variable">EndX</param>
+                                    <param id="1" name="Value">-1000* dt</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="2685849640696841" type="Line">
+                                    <param id="0" name="Instance variable">EndY</param>
+                                    <param id="1" name="Value">-1000*dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="7234949411364361">
                     <conditions>
@@ -956,7 +981,7 @@
                     <param id="1" name="Y">player.Y</param>
                 </action>
                 <action disabled="1" id="0" name="Set text" sid="1615657462577286" type="debug_text">
-                    <param id="0" name="Text">player.Anchored</param>
+                    <param id="0" name="Text">player.AnimationName</param>
                 </action>
             </actions>
         </event-block>

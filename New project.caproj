@@ -54,10 +54,6 @@
         <object-type global="1" name="player" sid="7723903875284628">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="wallHoldTimer" sid="7406337614172975" type="number" />
-                <instance-variable name="wallRun" sid="3837095989305583" type="number" />
-                <instance-variable name="standUp" sid="3968051180291669" type="number" />
-                <instance-variable name="slideSpeed" sid="124760735934113" type="number" />
                 <instance-variable name="WallJumpHoriz" sid="5098799566031872" type="number" />
                 <instance-variable name="WallJumpVert" sid="416609634748544" type="number" />
                 <instance-variable name="Anchored" sid="2415925444982158" type="number" />
@@ -101,6 +97,9 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
                 <animation framecount="1" loop="0" name="Swinging" pingpong="0" repeatcount="1" repeatto="0" sid="9956811321767647" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Jumping" pingpong="0" repeatcount="1" repeatto="0" sid="4779003012095413" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -517,20 +516,99 @@
                 </behavior-type>
             </behaviors>
             <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\StoneWallTileset.png" />
-            <tiles />
+            <tiles>
+                <tile id="7">
+                    <collision-poly>
+                        <point x="0.15625" y="0.15625" />
+                        <point x="0.84375" y="0.15625" />
+                        <point x="0.84375" y="0.84375" />
+                        <point x="0.15625" y="0.84375" />
+                    </collision-poly>
+                </tile>
+                <tile id="18">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="0.84375" y="0.84375" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="19">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="0.84375" />
+                        <point x="0" y="0.84375" />
+                    </collision-poly>
+                </tile>
+                <tile id="20">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0.15625" y="0.84375" />
+                    </collision-poly>
+                </tile>
+                <tile id="24">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="0.84375" y="0" />
+                        <point x="0.84375" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="25">
+                    <collision-poly>
+                        <point x="0.15625" y="0.15625" />
+                        <point x="0.84375" y="0.15625" />
+                        <point x="0.84375" y="0.84375" />
+                        <point x="0.15625" y="0.84375" />
+                    </collision-poly>
+                </tile>
+                <tile id="26">
+                    <collision-poly>
+                        <point x="0.15625" y="0" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0.15625" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="30">
+                    <collision-poly>
+                        <point x="0" y="0" />
+                        <point x="0.84375" y="0.15625" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="31">
+                    <collision-poly>
+                        <point x="0" y="0.15625" />
+                        <point x="1" y="0.15625" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+                <tile id="32">
+                    <collision-poly>
+                        <point x="0.15625" y="0.15625" />
+                        <point x="1" y="0" />
+                        <point x="1" y="1" />
+                        <point x="0" y="1" />
+                    </collision-poly>
+                </tile>
+            </tiles>
         </object-type>
         <object-type name="Line" sid="5662758327590529">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="Anchored" sid="4977767310127533" type="number" />
-                <instance-variable name="xOffset" sid="229887728979631" type="number" />
-                <instance-variable name="yOffset" sid="9930932689355457" type="number" />
                 <instance-variable name="EndX" sid="10156353787351" type="number" />
                 <instance-variable name="EndY" sid="526594194441347" type="number" />
                 <instance-variable name="theta" sid="1693827775716421" type="number" />
                 <instance-variable name="l" sid="9275330021581153" type="number" />
                 <instance-variable name="theta0" sid="5335183776825472" type="number" />
-                <instance-variable name="t" sid="9384834274920215" type="number" />
+                <instance-variable name="Mirrored" sid="8421881414975108" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9563360090387718" speed="5">

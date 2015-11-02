@@ -76,12 +76,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <wallHoldTimer>0</wallHoldTimer>
-                        <wallRun>0</wallRun>
-                        <standUp>0</standUp>
-                        <slideSpeed>0</slideSpeed>
                         <WallJumpHoriz>300</WallJumpHoriz>
-                        <WallJumpVert>450</WallJumpVert>
+                        <WallJumpVert>400</WallJumpVert>
                         <Anchored>0</Anchored>
                         <MinLine>100</MinLine>
                         <MaxLine>200</MaxLine>
