@@ -2,7 +2,7 @@
 <c2layout>
     <name>MainMenu</name>
     <sid>8613510144263477</sid>
-    <event-sheet>MainMenu sheet</event-sheet>
+    <event-sheet></event-sheet>
     <size>
         <width>3840</width>
         <height>1480</height>
@@ -38,12 +38,16 @@
                     </properties>
                     <instance-variables>
                         <Anchored>0</Anchored>
+                        <xOffset>0</xOffset>
+                        <yOffset>0</yOffset>
                         <EndX>0</EndX>
                         <EndY>0</EndY>
                         <theta>0</theta>
-                        <l>0</l>
+                        <CurrentLength>0</CurrentLength>
                         <theta0>0</theta0>
+                        <t>0</t>
                         <Mirrored>0</Mirrored>
+                        <SetLength>0</SetLength>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

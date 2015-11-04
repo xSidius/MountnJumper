@@ -2,7 +2,7 @@
 <c2layout>
     <name>UI</name>
     <sid>4801163178037194</sid>
-    <event-sheet>UI sheet</event-sheet>
+    <event-sheet></event-sheet>
     <size>
         <width>1280</width>
         <height>720</height>
