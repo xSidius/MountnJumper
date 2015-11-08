@@ -284,7 +284,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="Layer 0" sid="6783683167656832">
+        <layer name="Game" sid="6783683167656832">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -310,7 +310,7 @@
                         <seamless-mode>Off</seamless-mode>
                     </properties>
                     <behavior-instances>
-                        <behavior-instance type="Solid">
+                        <behavior-instance type="Solid2">
                             <properties>
                                 <initial-state>Enabled</initial-state>
                             </properties>
@@ -430,7 +430,7 @@
             <effects />
         </layer>
         <layer name="UI" sid="8227509307672186">
-            <initially-visible>1</initially-visible>
+            <initially-visible>0</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
             <parallax>

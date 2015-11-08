@@ -37,12 +37,12 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
-    <first-layout>Layout 1</first-layout>
+    <first-layout>HerpetiDerpetiBup</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
         <prop name="Enable WebGL">On</prop>
-        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen in browser">Scale inner</prop>
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
         <prop name="Orientations">Landscape</prop>
@@ -53,7 +53,7 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder expanded="1">
-        <object-folder expanded="1" name="TouchControlls">
+        <object-folder expanded="0" name="TouchControlls">
             <object-type name="ArrowUp" sid="6333590190455177">
                 <plugin id="Sprite" />
                 <animation-folder expanded="1">
@@ -164,6 +164,13 @@
                         </frame>
                     </animation>
                 </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder expanded="1" name="LevelTilesets">
+            <object-type name="StoneWall_lvlherp" sid="1657941014653254">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\StoneWallTileset.png" />
+                <tiles />
             </object-type>
         </object-folder>
         <object-type global="1" name="player" sid="7723903875284628">
@@ -628,11 +635,6 @@
         </object-type>
         <object-type name="TilemapStoneWall_lvl_2" sid="1080055924350756">
             <plugin id="Tilemap" />
-            <behaviors>
-                <behavior-type name="Solid" sid="7037328072372485">
-                    <behavior id="solid" />
-                </behavior-type>
-            </behaviors>
             <texture />
             <tiles />
         </object-type>
@@ -688,14 +690,36 @@
         <object-type name="Touch" sid="8439544761330054">
             <plugin id="Touch" />
         </object-type>
+        <object-type name="Text" sid="3175370743955371">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text2" sid="4104789355283433">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text3" sid="6246296293110894">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
-    <families />
+    <families>
+        <family name="LevelLayout" plugin-id="Tilemap" sid="8055901268729403">
+            <members>
+                <member>StoneWall_lvlherp</member>
+                <member>TilemapStoneWall_lvl_2</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Solid2" sid="5774691617272655">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+        </family>
+    </families>
     <layout-folder expanded="1">
         <layout>UI.xml</layout>
         <layout>SlideTester.xml</layout>
         <layout>MainMenu.xml</layout>
         <layout>Level 2.xml</layout>
         <layout>Layout 1.xml</layout>
+        <layout>HerpetiDerpetiBup.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Gameplay sheet.xml</event-sheet>
