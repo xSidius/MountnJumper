@@ -14,8 +14,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout>MainMenu</layout>
         <layout>SlideTester</layout>
         <layout>Level 2</layout>
-        <layout>Layout 1</layout>
-        <event-sheet active="1">Gameplay sheet</event-sheet>
+        <layout active="1">Layout 1</layout>
+        <event-sheet>Gameplay sheet</event-sheet>
+        <event-sheet>ObjectInteraction sheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

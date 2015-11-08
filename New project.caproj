@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
     <name>New project</name>
-    <description></description>
-    <version>1.0.0.0</version>
-    <author></author>
-    <author-email></author-email>
+    <description>asdasdasfasgsdgs</description>
+    <version>0.0.0.1</version>
+    <author>dasgdasg</author>
+    <author-email>sasovsdsa</author-email>
     <author-website>http://</author-website>
-    <app-id>com.mycompany.myapp</app-id>
+    <app-id>com.mycompany.mntjmp</app-id>
     <unique-id>2m2oqhlgof90t</unique-id>
-    <saved-with-version>16800</saved-with-version>
+    <saved-with-version>17800</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
@@ -16,6 +16,7 @@
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
@@ -35,6 +36,8 @@
         <height>720</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Layout 1</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -44,12 +47,125 @@
         <prop name="Loader style">Progress bar &amp; logo</prop>
         <prop name="Orientations">Landscape</prop>
         <prop name="Pause on unfocus">No</prop>
-        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Physics engine">CocoonJS native</prop>
         <prop name="Preview browser">Chrome</prop>
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder expanded="1">
+        <object-folder expanded="1" name="TouchControlls">
+            <object-type name="ArrowUp" sid="6333590190455177">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="549613316333596" speed="5">
+                        <frame duration="1" hotspotX="0.514286" hotspotY="0.5" original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\ArrowUp.png">
+                            <collision-poly>
+                                <point x="0.485714" y="0" />
+                                <point x="0.742857" y="0.264706" />
+                                <point x="0.942857" y="0.5" />
+                                <point x="0.771429" y="0.764706" />
+                                <point x="0.485714" y="1" />
+                                <point x="0.228571" y="0.764706" />
+                                <point x="0.0571429" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ArrowDown" sid="753647383233032">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2411885195910955" speed="5">
+                        <frame duration="1" hotspotX="0.514286" hotspotY="0.5" original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\ArrowDown.png">
+                            <collision-poly>
+                                <point x="0.228571" y="0.235294" />
+                                <point x="0.485714" y="0" />
+                                <point x="0.771429" y="0.235294" />
+                                <point x="0.914286" y="0.5" />
+                                <point x="0.742857" y="0.735294" />
+                                <point x="0.485714" y="1" />
+                                <point x="0.257143" y="0.735294" />
+                                <point x="0.0857143" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ArrowLeft" sid="8923382351343125">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7953342904305117" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.514286" original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\ArrowLeft.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.0571429" />
+                                <point x="0.735294" y="0.257143" />
+                                <point x="0.970588" y="0.485714" />
+                                <point x="0.764706" y="0.771429" />
+                                <point x="0.5" y="0.942857" />
+                                <point x="0.264706" y="0.742857" />
+                                <point x="0" y="0.485714" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ArrowRight" sid="2565072219163532">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7597328393326777" speed="5">
+                        <frame duration="1" hotspotX="0.515152" hotspotY="0.5" original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\ArrowRight.png">
+                            <collision-poly>
+                                <point x="0.242424" y="0.235294" />
+                                <point x="0.484848" y="0.0588235" />
+                                <point x="1" y="0.5" />
+                                <point x="0.757576" y="0.764706" />
+                                <point x="0.484848" y="0.970588" />
+                                <point x="0.242424" y="0.764706" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="AButton" sid="5095089557843866">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2990382421005736" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\Xbox360_Button_A.png">
+                            <collision-poly>
+                                <point x="0.265625" y="0.265625" />
+                                <point x="0.5" y="0.171875" />
+                                <point x="0.734375" y="0.265625" />
+                                <point x="0.859375" y="0.5" />
+                                <point x="0.75" y="0.75" />
+                                <point x="0.5" y="0.859375" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.140625" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="BButton" sid="9716002047165048">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8807192707324704" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\Xbox360_Button_B.png">
+                            <collision-poly>
+                                <point x="0.265625" y="0.265625" />
+                                <point x="0.5" y="0.171875" />
+                                <point x="0.734375" y="0.265625" />
+                                <point x="0.859375" y="0.5" />
+                                <point x="0.75" y="0.75" />
+                                <point x="0.5" y="0.859375" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.140625" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type global="1" name="player" sid="7723903875284628">
             <plugin id="Sprite" />
             <instance-variables>
@@ -544,6 +660,34 @@
         <object-type name="Browser" sid="22888159449346">
             <plugin id="Browser" />
         </object-type>
+        <object-type name="JumpTile" sid="5481203272544736">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="CoolDown" sid="5297867397860528" type="number" />
+                <instance-variable name="OnCoolDown" sid="591774220620074" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="9843448923382436">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="752656824344439" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="KillTile" sid="206254871321473">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5799466688273044" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Touch" sid="8439544761330054">
+            <plugin id="Touch" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
@@ -555,10 +699,16 @@
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Gameplay sheet.xml</event-sheet>
+        <event-sheet>ObjectInteraction sheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />
         <global-instance type="Browser" uid="0" />
+        <global-instance type="Touch" uid="19">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />

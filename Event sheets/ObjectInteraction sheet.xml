@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ObjectInteraction sheet</name>
+    <events>
+        <event-block sid="4607808030926583">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="9363321178326868" type="JumpTile">
+                    <param id="0" name="Tag">&quot;CoolDown&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="4056892102774795" type="JumpTile">
+                    <param id="0" name="Instance variable">OnCoolDown</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
