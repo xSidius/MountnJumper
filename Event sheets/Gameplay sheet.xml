@@ -1447,6 +1447,50 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block any="1" sid="3710662443825386">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="9583083844218606" type="player">
+                                    <param id="0" name="Animation">&quot;WallDown&quot;</param>
+                                </condition>
+                                <condition id="2" name="Is playing" sid="9883733365535342" type="player">
+                                    <param id="0" name="Animation">&quot;WallHold&quot;</param>
+                                </condition>
+                                <condition id="2" name="Is playing" sid="4466260318817414" type="player">
+                                    <param id="0" name="Animation">&quot;WallUp&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="9465839888123891">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="9823587240848074" type="player">
+                                            <param id="0" name="Side">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="6604944979125322" type="player">
+                                            <param id="0" name="Vector Y">100</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="6459831374992179" type="player">
+                                            <param id="0" name="Vector X">200</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6196522082654469">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="9371624356920253" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="7391575665665986" type="player">
+                                            <param id="0" name="Vector Y">100</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="6486404201110739" type="player">
+                                            <param id="0" name="Vector X">-200</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                     </sub-events>
                 </event-block>
                 <event-block any="1" collapsed="1" sid="6354300483466209">
