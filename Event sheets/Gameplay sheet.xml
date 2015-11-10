@@ -269,6 +269,34 @@
                                                             <param id="1" name="From">1</param>
                                                         </action>
                                                     </actions>
+                                                    <sub-events>
+                                                        <event-block sid="5415747618429558">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="6806472208812823" type="System">
+                                                                    <param id="0" name="First value">Line.CurrentLength</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Second value">player.MinLine</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="5136213923498303" type="player">
+                                                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="6792455508646519">
+                                                            <conditions>
+                                                                <condition id="-22" name="Else" sid="6593341159756009" type="System" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="2921081821141799" type="player">
+                                                                    <param id="0" name="Animation">&quot;Swing&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
                                                 <event-block sid="1523270588853447">
                                                     <conditions>
@@ -375,12 +403,40 @@
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="8446594721973459" type="player">
-                                                            <param id="0" name="Animation">&quot;Swing&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                    </actions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block any="1" sid="95607642985282">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="2962699308095168" type="System">
+                                                                    <param id="0" name="First value">Line.CurrentLength</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Second value">player.MinLine</param>
+                                                                </condition>
+                                                                <condition id="-8" name="Compare two values" sid="5530173628608755" type="System">
+                                                                    <param id="0" name="First value">player.Platform.VectorY</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Second value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="9341858551236251" type="player">
+                                                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="140242249340252">
+                                                            <conditions>
+                                                                <condition id="-22" name="Else" sid="7087076966107619" type="System" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="682757754885161" type="player">
+                                                                    <param id="0" name="Animation">&quot;Swing&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
                                                 <event-block sid="3320469934096092">
                                                     <conditions>
