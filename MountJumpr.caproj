@@ -24,7 +24,6 @@
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
-        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -129,6 +128,10 @@
                 <instance-variable name="MaxLine" sid="5931667860738395" type="number" />
                 <instance-variable name="StateBefore" sid="9858702189641387" type="string" />
                 <instance-variable name="WallHoldLimit" sid="2301648054668163" type="number" />
+                <instance-variable name="JumpSustain" sid="9975698366033087" type="number" />
+                <instance-variable name="JumpTimer" sid="2480668294106152" type="number" />
+                <instance-variable name="JumpEnd" sid="9290390374214311" type="number" />
+                <instance-variable name="JumpStart" sid="1718268374937558" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="1173370167233146">
@@ -139,9 +142,6 @@
                 </behavior-type>
                 <behavior-type name="Timer" sid="6609975247420049">
                     <behavior id="Timer" />
-                </behavior-type>
-                <behavior-type name="CustomMovement" sid="5628031750040863">
-                    <behavior id="custom" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -648,6 +648,31 @@
             <plugin id="Particles" />
             <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\SnowFlake.png" />
         </object-type>
+        <object-type name="test" sid="5396620637657196">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="9117914956165318">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4989736485018141" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.0625" y="0.119141" />
+                            <point x="0.183594" y="0.745117" />
+                            <point x="0.298828" y="0.933105" />
+                            <point x="0.522461" y="0.892334" />
+                            <point x="0.778809" y="0.778198" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="LevelLayout" plugin-id="Tilemap" sid="8055901268729403">
@@ -669,6 +694,7 @@
         <layout>Level 2.xml</layout>
         <layout>Layout 1.xml</layout>
         <layout>HerpetiDerpetiBup.xml</layout>
+        <layout>Layout 2.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Gameplay sheet.xml</event-sheet>

@@ -328,15 +328,19 @@
                         <MinLine>0</MinLine>
                         <MaxLine>350</MaxLine>
                         <StateBefore>Default</StateBefore>
-                        <WallHoldLimit>0</WallHoldLimit>
+                        <WallHoldLimit>0.35</WallHoldLimit>
+                        <JumpSustain>0.15</JumpSustain>
+                        <JumpTimer>0</JumpTimer>
+                        <JumpEnd>0</JumpEnd>
+                        <JumpStart>0</JumpStart>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>400</max-speed>
+                                <max-speed>1000</max-speed>
                                 <acceleration>600</acceleration>
                                 <deceleration>1500</deceleration>
-                                <jump-strength>500</jump-strength>
+                                <jump-strength>400</jump-strength>
                                 <gravity>1500</gravity>
                                 <max-fall-speed>700</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
@@ -351,13 +355,6 @@
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="Timer" />
-                        <behavior-instance type="CustomMovement">
-                            <properties>
-                                <stepping-mode>None</stepping-mode>
-                                <pixels-per-step>5</pixels-per-step>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
