@@ -209,6 +209,10 @@
                                             <param id="0" name="Animation">&quot;Default&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
+                                        <action id="-9" name="Set value" sid="618436995852045" type="System">
+                                            <param id="0" name="Variable">FirstSwing</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="2027340007225644">
@@ -802,7 +806,7 @@
                             <param id="0" name="Max Speed">600</param>
                         </action>
                         <action behavior="Platform" id="5" name="Set gravity" sid="2087737340087224" type="player">
-                            <param id="0" name="Gravity">2000</param>
+                            <param id="0" name="Gravity">2500</param>
                         </action>
                     </actions>
                 </event-block>
@@ -883,7 +887,7 @@
                             <param id="0" name="Max Speed">600</param>
                         </action>
                         <action behavior="Platform" id="5" name="Set gravity" sid="1872581595925696" type="player">
-                            <param id="0" name="Gravity">2000</param>
+                            <param id="0" name="Gravity">2500</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1386,7 +1390,7 @@
                                         <action behavior="Platform" id="8" name="Set vector X" sid="8174720231220122" type="player">
                                             <param id="0" name="Vector X">300</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="5561166883382691" type="System">
+                                        <action disabled="1" id="-9" name="Set value" sid="5561166883382691" type="System">
                                             <param id="0" name="Variable">rspeed</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -1396,6 +1400,10 @@
                                         </action>
                                         <action behavior="Platform" id="9" name="Set vector Y" sid="6675635355427217" type="player">
                                             <param id="0" name="Vector Y">-100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="691219920601047" type="System">
+                                            <param id="0" name="Variable">FirstSwing</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -1427,7 +1435,7 @@
                                         <action behavior="Platform" id="8" name="Set vector X" sid="2537470724570643" type="player">
                                             <param id="0" name="Vector X">-300</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="1297977124306081" type="System">
+                                        <action disabled="1" id="-9" name="Set value" sid="1297977124306081" type="System">
                                             <param id="0" name="Variable">rspeed</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -1437,6 +1445,10 @@
                                         </action>
                                         <action behavior="Platform" id="9" name="Set vector Y" sid="7023212506067972" type="player">
                                             <param id="0" name="Vector Y">-100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="6805093472847947" type="System">
+                                            <param id="0" name="Variable">FirstSwing</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -2213,6 +2225,14 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
+                        <condition id="-7" name="Compare instance variable" sid="9095661863718358" type="Line">
+                            <param id="0" name="Instance variable">CurrentLength</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">player.MinLine</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="4187559778563879" type="player">
+                            <param id="0" name="Animation">&quot;Swing&quot;</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-10" name="Set value" sid="3063107204077894" type="Line">
@@ -2223,19 +2243,89 @@
                             <param id="0" name="Instance variable">theta</param>
                             <param id="1" name="Value">(angle(Line.EndX,Line.EndY,Line.X,Line.Y) -90)</param>
                         </action>
-                        <action id="-9" name="Set value" sid="7262464161327817" type="System">
-                            <param id="0" name="Variable">rspeed</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
                         <action id="-9" name="Set value" sid="8250409941468892" type="System">
                             <param id="0" name="Variable">FirstSwing</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7737932815535481" type="Line">
+                            <param id="0" name="Instance variable">theta_m1</param>
+                            <param id="1" name="Value">Line.theta - 90</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="853267907923627" type="Line">
+                            <param id="0" name="Instance variable">theta_m2</param>
+                            <param id="1" name="Value">Line.theta +90</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1670435072894055" type="Line">
+                            <param id="0" name="Instance variable">theta_pm</param>
+                            <param id="1" name="Value">angle(0,0, player.Platform.VectorX,player.Platform.VectorY)-90</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="424692280773413" type="Line">
+                            <param id="0" name="Instance variable">theta_r1</param>
+                            <param id="1" name="Value">Line.theta_m1 - Line.theta_pm</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7896255802680529" type="Line">
+                            <param id="0" name="Instance variable">theta_r2</param>
+                            <param id="1" name="Value">Line.theta_m2 - Line.theta_pm</param>
                         </action>
                         <action id="14" name="Log" sid="8581797373779926" type="Browser">
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;theta &quot; &amp; Line.theta</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="9764294244900464">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6530019214909208" type="System">
+                                    <param id="0" name="First value">abs(Line.theta_r1)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">abs(Line.theta_r2)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="2555175118204621" type="System">
+                                    <param id="0" name="Variable">rspeed</param>
+                                    <param id="1" name="Value">-cos(Line.theta_r1) * player.Platform.Speed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9979520126427435">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5293152963115779" type="System" />
+                                <condition id="-8" name="Compare two values" sid="6295981320203055" type="System">
+                                    <param id="0" name="First value">abs(Line.theta_r1)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">abs(Line.theta_r2)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="1147802144405082" type="System">
+                                    <param id="0" name="Variable">rspeed</param>
+                                    <param id="1" name="Value">cos(Line.theta_r2) * player.Platform.Speed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5938043962019118">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5510536529173624" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="8861496723279264" type="System">
+                                    <param id="0" name="Variable">rspeed</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1250901228589427">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="9767467183622296" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="5883881732138681" type="debug_text">
+                                    <param id="0" name="Text">round(Line.theta_r1)&amp;&quot; &quot; &amp;round(Line.theta_r2)&amp;&quot; &quot; &amp;round(player.Platform.Speed)&amp;&quot; &quot; &amp;rspeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="5500504275990586">
                     <conditions>
@@ -2270,7 +2360,7 @@
                         </action>
                         <action id="-10" name="Add to" sid="2305907056037397" type="System">
                             <param id="0" name="Variable">rspeed</param>
-                            <param id="1" name="Value">-sin(Line.theta) *1500*dt</param>
+                            <param id="1" name="Value">-sin(Line.theta) *2500*dt</param>
                         </action>
                         <action id="-9" name="Set value" sid="8270805169113515" type="System">
                             <param id="0" name="Variable">omega</param>
@@ -2495,7 +2585,7 @@
                     <param id="0" name="Variable">rspeed</param>
                     <param id="1" name="Value">rspeed-rspeed *0.8*dt</param>
                 </action>
-                <action id="0" name="Set text" sid="1615657462577286" type="debug_text">
+                <action disabled="1" id="0" name="Set text" sid="1615657462577286" type="debug_text">
                     <param id="0" name="Text">player.AnimationName &amp; &quot; &quot; &amp;player.JumpStart&amp;&quot; &quot;&amp; player.JumpEnd &amp;&quot; &quot;&amp; player.JumpTimer</param>
                 </action>
                 <action id="-10" name="Set value" sid="9193260359580435" type="player">

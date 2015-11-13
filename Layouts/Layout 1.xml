@@ -49,8 +49,8 @@
                         <x>96</x>
                         <y>368</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>48</height>
+                        <width>64</width>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -78,8 +78,8 @@
                         <x>832</x>
                         <y>400</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>48</height>
+                        <width>64</width>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -107,8 +107,8 @@
                         <x>144</x>
                         <y>560</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>48</height>
+                        <width>64</width>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -136,8 +136,8 @@
                         <x>944</x>
                         <y>80</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>48</height>
+                        <width>64</width>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -165,8 +165,8 @@
                         <x>896</x>
                         <y>160</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>48</height>
+                        <width>64</width>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -194,8 +194,8 @@
                         <x>208</x>
                         <y>320</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>48</height>
+                        <width>64</width>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -223,8 +223,8 @@
                         <x>144</x>
                         <y>448</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>48</height>
+                        <width>64</width>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -274,8 +274,8 @@
                         <x>688</x>
                         <y>208</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>48</height>
+                        <width>64</width>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -357,7 +357,7 @@
                         <MaxLine>350</MaxLine>
                         <StateBefore>Default</StateBefore>
                         <WallHoldLimit>0.35</WallHoldLimit>
-                        <JumpSustain>0.15</JumpSustain>
+                        <JumpSustain>0.2</JumpSustain>
                         <JumpTimer>0</JumpTimer>
                         <JumpEnd>0</JumpEnd>
                         <JumpStart>0</JumpStart>
@@ -370,7 +370,7 @@
                                 <deceleration>1500</deceleration>
                                 <jump-strength>400</jump-strength>
                                 <gravity>1500</gravity>
-                                <max-fall-speed>700</max-fall-speed>
+                                <max-fall-speed>900</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
                                 <default-controls>No</default-controls>
@@ -383,6 +383,11 @@
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="Timer" />
+                        <behavior-instance type="BoundToLayout">
+                            <properties>
+                                <bound-by>Edge</bound-by>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -403,7 +408,7 @@
             <effects />
         </layer>
         <layer name="UI" sid="8227509307672186">
-            <initially-visible>1</initially-visible>
+            <initially-visible>0</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
             <parallax>
@@ -571,7 +576,7 @@
                         <x>218</x>
                         <y>287</y>
                         <z>0</z>
-                        <width>160</width>
+                        <width>368</width>
                         <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>

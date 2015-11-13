@@ -24,6 +24,7 @@
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -142,6 +143,9 @@
                 </behavior-type>
                 <behavior-type name="Timer" sid="6609975247420049">
                     <behavior id="Timer" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="5720287034029878">
+                    <behavior id="bound" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -597,6 +601,11 @@
                 <instance-variable name="t" sid="9384834274920215" type="number" />
                 <instance-variable name="Mirrored" sid="9651784015914269" type="number" />
                 <instance-variable name="SetLength" sid="6089446792243995" type="number" />
+                <instance-variable name="theta_m2" sid="236730331083284" type="number" />
+                <instance-variable name="theta_pm" sid="2245990556508816" type="number" />
+                <instance-variable name="theta_r1" sid="2417655218672698" type="number" />
+                <instance-variable name="theta_r2" sid="2554041269211159" type="number" />
+                <instance-variable name="theta_m1" sid="268453126049818" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9563360090387718" speed="5">

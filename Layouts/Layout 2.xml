@@ -74,7 +74,7 @@
                         <MaxLine>350</MaxLine>
                         <StateBefore>Default</StateBefore>
                         <WallHoldLimit>0.35</WallHoldLimit>
-                        <JumpSustain>0.15</JumpSustain>
+                        <JumpSustain>0.2</JumpSustain>
                         <JumpTimer>0</JumpTimer>
                         <JumpEnd>0</JumpEnd>
                         <JumpStart>0</JumpStart>
@@ -87,7 +87,7 @@
                                 <deceleration>1500</deceleration>
                                 <jump-strength>400</jump-strength>
                                 <gravity>1500</gravity>
-                                <max-fall-speed>700</max-fall-speed>
+                                <max-fall-speed>900</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
                                 <default-controls>No</default-controls>
@@ -100,6 +100,11 @@
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="Timer" />
+                        <behavior-instance type="BoundToLayout">
+                            <properties>
+                                <bound-by>Edge</bound-by>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

@@ -48,6 +48,11 @@
                         <t>0</t>
                         <Mirrored>0</Mirrored>
                         <SetLength>0</SetLength>
+                        <theta_m2>0</theta_m2>
+                        <theta_pm>0</theta_pm>
+                        <theta_r1>0</theta_r1>
+                        <theta_r2>0</theta_r2>
+                        <theta_m1>0</theta_m1>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
