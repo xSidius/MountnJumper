@@ -34,8 +34,8 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>1280</width>
-        <height>720</height>
+        <width>960</width>
+        <height>640</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
@@ -687,6 +687,8 @@
     <event-folder>
         <event-sheet>Gameplay sheet.xml</event-sheet>
         <event-sheet>ObjectInteraction sheet.xml</event-sheet>
+        <event-sheet>Visual Effects sheet.xml</event-sheet>
+        <event-sheet>Audio sheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />

@@ -19,6 +19,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="8">Layout 2</layout>
         <event-sheet active="1" order="6">Gameplay sheet</event-sheet>
         <event-sheet order="7">ObjectInteraction sheet</event-sheet>
+        <event-sheet order="9">Visual Effects sheet</event-sheet>
+        <event-sheet order="10">Audio sheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Gameplay sheet</name>
     <events>
+        <include>Audio sheet</include>
+        <include>Visual Effects sheet</include>
         <include>ObjectInteraction sheet</include>
         <variable constant="0" name="rspeed" sid="8075979722211104" static="0" type="number">0</variable>
         <variable constant="0" name="FirstSwing" sid="6241019882382003" static="0" type="number">1</variable>
@@ -2597,14 +2599,14 @@
                     <param id="0" name="Variable">rspeed</param>
                     <param id="1" name="Value">rspeed-rspeed *0.8*dt</param>
                 </action>
-                <action disabled="1" id="0" name="Set text" sid="1615657462577286" type="debug_text">
+                <action id="0" name="Set text" sid="1615657462577286" type="debug_text">
                     <param id="0" name="Text">player.AnimationName &amp; &quot; &quot; &amp;player.JumpStart&amp;&quot; &quot;&amp; player.JumpEnd &amp;&quot; &quot;&amp; player.JumpTimer</param>
                 </action>
                 <action id="-10" name="Set value" sid="9193260359580435" type="player">
                     <param id="0" name="Instance variable">StateBefore</param>
                     <param id="1" name="Value">player.AnimationName</param>
                 </action>
-                <action id="-7" name="Scroll to position" sid="5570210284189068" type="System">
+                <action disabled="1" id="-7" name="Scroll to position" sid="5570210284189068" type="System">
                     <param id="0" name="X">player.X</param>
                     <param id="1" name="Y">player.Y</param>
                 </action>
@@ -2694,11 +2696,16 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="33" name="Stop all" sid="568927257336985" type="Audio" />
                         <action id="0" name="Play" sid="7212233503898307" type="Audio">
                             <param id="0" name="Audio file">Jump</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">-15</param>
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="5016074205333855" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;JumpCrni&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -2736,8 +2743,35 @@
             <actions />
         </event-block>
         <event-block sid="6058196985114003">
-            <conditions />
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="498077871596481" type="player">
+                    <param id="0" name="Instance variable">StateBefore</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;Jump&quot;</param>
+                </condition>
+            </conditions>
             <actions />
+            <sub-events>
+                <event-block sid="6232114282125658">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="6506486782504074" type="player">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="25" name="Play at object" sid="3095149672899707" type="Audio">
+                            <param id="0" name="Audio file">SolidGroundStep01</param>
+                            <param id="1" name="Loop">1</param>
+                            <param id="2" name="Volume">-10</param>
+                            <param id="3" name="Object">player</param>
+                            <param id="4" name="Inner angle">360</param>
+                            <param id="5" name="Outer angle">360</param>
+                            <param id="6" name="Outer gain">0</param>
+                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="4679055450896572">
             <conditions />
@@ -2878,20 +2912,52 @@
             </sub-events>
         </event-block>
         <event-block sid="7444516034618524">
-            <conditions />
-            <actions />
+            <conditions>
+                <condition id="2" name="Key is down" sid="2376018948185326" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-5" name="Scroll to X" sid="8292722869104774" type="System">
+                    <param id="0" name="X">scrollx + 10</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="9148959365294031">
-            <conditions />
-            <actions />
+            <conditions>
+                <condition id="2" name="Key is down" sid="7171821391210752" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-5" name="Scroll to X" sid="6898386809949091" type="System">
+                    <param id="0" name="X">scrollx - 10</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="1546767660802996">
-            <conditions />
-            <actions />
+            <conditions>
+                <condition id="2" name="Key is down" sid="5940984003442191" type="Keyboard">
+                    <param id="0" name="Key">38 (Up arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-6" name="Scroll to Y" sid="1745772294123124" type="System">
+                    <param id="0" name="Y">scrolly - 10</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="7670676699636447">
-            <conditions />
-            <actions />
+            <conditions>
+                <condition id="2" name="Key is down" sid="7678155183885096" type="Keyboard">
+                    <param id="0" name="Key">40 (Down arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-6" name="Scroll to Y" sid="8773908609686261" type="System">
+                    <param id="0" name="Y">scrolly + 10</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="9636255172200603">
             <conditions />
