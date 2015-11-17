@@ -10,6 +10,7 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>20402</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
@@ -653,34 +654,12 @@
         <object-type name="Text3" sid="6246296293110894">
             <plugin id="Text" />
         </object-type>
-        <object-type name="SnowParticle" sid="5308261589656545">
+        <object-type name="SnowParticles" sid="6128880035436884">
             <plugin id="Particles" />
-            <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\SnowFlake.png" />
+            <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\SnowFlake.png" />
         </object-type>
-        <object-type name="test" sid="5396620637657196">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Solid" sid="9117914956165318">
-                    <behavior id="solid" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4989736485018141" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0" y="0" />
-                            <point x="0.0625" y="0.119141" />
-                            <point x="0.183594" y="0.745117" />
-                            <point x="0.298828" y="0.933105" />
-                            <point x="0.522461" y="0.892334" />
-                            <point x="0.778809" y="0.778198" />
-                            <point x="1" y="0" />
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
+        <object-type name="Audio" sid="2543882232611913">
+            <plugin id="Audio" />
         </object-type>
     </object-folder>
     <families>
@@ -717,8 +696,30 @@
                 <use-mouse-input>Yes</use-mouse-input>
             </properties>
         </global-instance>
+        <global-instance type="Audio" uid="39">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="Jump.m4a" />
+        <file name="Jump.ogg" />
+        <file name="SolidGroundStep01.ogg" />
+        <file name="ChainSwing.m4a" />
+        <file name="ChainSwing.ogg" />
+        <file name="Woosh.m4a" />
+        <file name="Woosh.ogg" />
+    </sounds-folder>
     <music-folder />
     <files-folder>
         <file-folder name="Icons">

@@ -14,11 +14,17 @@
                         <condition id="-2" name="On start of layout" sid="2447334150881675" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-24" name="Move to top" sid="5885856433668573" type="TilemapStoneWall_lvl_2" />
+                        <action disabled="1" id="-24" name="Move to top" sid="5885856433668573" type="TilemapStoneWall_lvl_2" />
                         <action id="-25" name="Move to bottom" sid="8258585963108275" type="player" />
                         <action id="-7" name="Scroll to position" sid="4877397282802873" type="System">
                             <param id="0" name="X">player.X</param>
                             <param id="1" name="Y">player.Y</param>
+                        </action>
+                        <action disabled="1" id="-3" name="Create object" sid="905240358100411" type="System">
+                            <param id="0" name="Object to create">SnowParticles</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">player.X</param>
+                            <param id="3" name="Y">player.Y</param>
                         </action>
                     </actions>
                 </event-block>
@@ -809,6 +815,12 @@
                             <param id="0" name="Gravity">2500</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="9557598930642055">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="5173217092361023">
                     <conditions>
@@ -829,13 +841,13 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Platform" id="5" name="Set gravity" sid="3932686381855267" type="player">
+                        <action behavior="Platform" id="5" name="Set gravity" sid="4358795638727486" type="player">
                             <param id="0" name="Gravity">0</param>
                         </action>
-                        <action behavior="Platform" id="8" name="Set vector X" sid="4123289124368969" type="player">
+                        <action behavior="Platform" id="8" name="Set vector X" sid="3247597595093572" type="player">
                             <param id="0" name="Vector X">0</param>
                         </action>
-                        <action behavior="Platform" id="9" name="Set vector Y" sid="5203100500422706" type="player">
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="8496292536924645" type="player">
                             <param id="0" name="Vector Y">0</param>
                         </action>
                     </actions>
@@ -2596,7 +2608,386 @@
                     <param id="0" name="X">player.X</param>
                     <param id="1" name="Y">player.Y</param>
                 </action>
+                <action disabled="1" id="-3" name="Set position" sid="7794960008505756" type="SnowParticles">
+                    <param id="0" name="X">player.X</param>
+                    <param id="1" name="Y">player.Y</param>
+                </action>
+                <action disabled="1" id="-8" name="Set angle" sid="7166845154686201" type="SnowParticles">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action disabled="1" id="-8" name="Set angle" sid="7264761834700582" type="SnowParticles">
+                    <param id="0" name="Angle">0</param>
+                </action>
             </actions>
+            <sub-events>
+                <event-block sid="1549141554175112">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="5599096934384469" type="player">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6346697182083739">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="7874227520967863" type="System">
+                                    <param id="0" name="First value">player.Platform.Speed</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="7773256775698016">
+                                    <conditions>
+                                        <condition id="7" name="Is mirrored" sid="3596520181806896" type="player" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-8" name="Set angle" sid="1180098415661323" type="SnowParticles">
+                                            <param id="0" name="Angle">0</param>
+                                        </action>
+                                        <action id="4" name="Set speed" sid="1076107245572732" type="SnowParticles">
+                                            <param id="0" name="Speed">player.Platform.Speed</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8938323703660802">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="2899650602301593" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-8" name="Set angle" sid="243112575939708" type="SnowParticles">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="4" name="Set speed" sid="5945454043309565" type="SnowParticles">
+                                            <param id="0" name="Speed">player.Platform.Speed</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="7525949140220338">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2399618359406369" type="System" />
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2775764056651568">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="7143527195328451" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="7516209432562916" title="Sounds">
+            <sub-events>
+                <event-block sid="6257438188807347">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="1097115504089803" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="1714108311069629" type="player">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="7212233503898307" type="Audio">
+                            <param id="0" name="Audio file">Jump</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5972276421800448">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="8410791776482174">
+            <conditions>
+                <condition disabled="1" id="-8" name="Compare two values" sid="7158572934377086" type="System">
+                    <param id="0" name="First value">player.Platform.Speed</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+                <condition disabled="1" id="2" name="Is playing" sid="7662393162896083" type="player">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+                <condition disabled="1" id="5" inverted="1" name="Is tag playing" sid="5565639677329469" type="Audio">
+                    <param id="0" name="Tag">&quot;SolidGroundStep01&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Play" sid="8744749256563809" type="Audio">
+                    <param id="0" name="Audio file">SolidGroundStep01</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-20</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3141364683791638">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="6058196985114003">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="4679055450896572">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="9997841184541687">
+            <conditions />
+            <actions />
+            <sub-events>
+                <event-block sid="9323896449406847">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="2361459605226606" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="3838594288307249" type="player" />
+                        <condition id="5" inverted="1" name="Is tag playing" sid="463131057938853" type="Audio">
+                            <param id="0" name="Tag">&quot;Jump&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4967603122534494">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="6343456800932735" type="player">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="9905832248853734" type="Audio">
+                                    <param id="0" name="Audio file">SolidGroundStep01</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-20</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8538746812557249">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="7850699734565313" type="player">
+                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="33" name="Stop all" sid="837417451608111" type="Audio" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2310072480100945">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="6992219358267723" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="4592315444504353" type="player" />
+                        <condition id="5" inverted="1" name="Is tag playing" sid="6088823273054447" type="Audio">
+                            <param id="0" name="Tag">&quot;Jump&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="7148890320611375">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="1048616554157529" type="player">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="8327746151085028" type="Audio">
+                                    <param id="0" name="Audio file">SolidGroundStep01</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-20</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7722706670878159">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="302565769214023" type="player">
+                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="33" name="Stop all" sid="7388657078992554" type="Audio" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5301604334178769">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block any="1" sid="1379821843270159">
+            <conditions>
+                <condition id="3" name="On key released" sid="180359610983324" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+                <condition id="3" name="On key released" sid="8078865049140447" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="1135945267030183" type="Audio" />
+            </actions>
+        </event-block>
+        <event-block any="1" sid="70935561230943">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="3013247952161">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="5910981287653451">
+            <conditions>
+                <condition disabled="1" id="0" name="On key pressed" sid="1592220543577664" type="Keyboard">
+                    <param id="0" name="Key">16 (Shift)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Play" sid="8180524387121328" type="Audio">
+                    <param id="0" name="Audio file">Woosh</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9612953522729692">
+            <conditions />
+            <actions />
+            <sub-events>
+                <event-block sid="4780768036768647">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7444516034618524">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="9148959365294031">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="1546767660802996">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="7670676699636447">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="9636255172200603">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="2496703403167719">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="4613738519215688">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="1619053914327395">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="9752950325253004">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="2081048822335399">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="4360066701120806">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="6022343643705835">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="8953511242724752">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="4928661660199101">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="586344794789084">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="2616177480490406">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="7425719719566719">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="218060991161062">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="8460961991168043">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="4727688111304969">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="8733292882689425">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="9513298675002238">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="3662981995543139">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="3836443302608342">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="1232344535298918">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="8860707116979471">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="687823665507807">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="2186638119363379">
+            <conditions />
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>
