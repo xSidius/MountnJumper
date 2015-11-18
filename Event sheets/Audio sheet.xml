@@ -2,5 +2,204 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Audio sheet</name>
-    <events />
+    <events>
+        <event-group description="" disabled="1" sid="3002299525304908" title="Jump" />
+        <event-block disabled="1" sid="7840050241644363">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="5079269596476207" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+                <condition id="2" inverted="1" name="Is playing" sid="7610659813452702" type="player">
+                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="2401212225485122" type="Audio" />
+                <action id="0" name="Play" sid="8245497387334071" type="Audio">
+                    <param id="0" name="Audio file">Jump</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-15</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="14" name="Log" sid="409563182981795" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;JumpCrni&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" disabled="1" sid="939525798196476" title="Walking">
+            <sub-events>
+                <event-block disabled="1" sid="5390050454204831">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="1348301981384574" type="player" />
+                        <condition id="-7" name="Compare instance variable" sid="6250904023986069" type="player">
+                            <param id="0" name="Instance variable">StateBefore</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Jump&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="6652914598260522" type="System">
+                            <param id="0" name="First value">player.Platform.Speed</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="33" name="Stop all" sid="2050025827157573" type="Audio" />
+                        <action id="0" name="Play" sid="2289956752054449" type="Audio">
+                            <param id="0" name="Audio file">SolidGroundStep01</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-20</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block any="1" disabled="1" sid="515175324180768">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="5819162397840402" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="3430459084398219" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="1109735467222558" type="Audio">
+                                    <param id="0" name="Audio file">SolidGroundStep01</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-20</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" disabled="1" sid="9950956623858154">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="6272867026512588">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="5442626016623147" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="7894527297368357" type="player" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="7690777809303245">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="1705249252791649" type="player">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="33" name="Stop all" sid="7056176851268553" type="Audio" />
+                                <action id="0" name="Play" sid="813792731416901" type="Audio">
+                                    <param id="0" name="Audio file">SolidGroundStep01</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-20</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="5402933652352395">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="8640059677612421" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="10328403224481" type="player" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" disabled="1" sid="1898074597809676">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="7254693078592697" type="player">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="33" name="Stop all" sid="3071689239513854" type="Audio" />
+                                <action id="0" name="Play" sid="4603671257592267" type="Audio">
+                                    <param id="0" name="Audio file">SolidGroundStep01</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-20</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="9542050005664347">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                        <event-block disabled="1" sid="9733116020729065">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="4452955140345249">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="7023998371029471" type="player">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" disabled="1" sid="9861927999635696">
+                            <conditions>
+                                <condition behavior="Platform" id="10" name="Is by wall" sid="5179939419699014" type="player">
+                                    <param id="0" name="Side">0</param>
+                                </condition>
+                                <condition behavior="Platform" id="10" name="Is by wall" sid="5283925807612761" type="player">
+                                    <param id="0" name="Side">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="33" name="Stop all" sid="5548596086125106" type="Audio" />
+                            </actions>
+                        </event-block>
+                        <event-block any="1" disabled="1" sid="3954948584551561">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="6447957360001952">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" disabled="1" sid="5462225638586478" title="ReleseButtonHandler">
+            <sub-events>
+                <event-block any="1" disabled="1" sid="8874068776635825">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="5030011416912978" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                        <condition id="3" name="On key released" sid="2157666601804298" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="33" name="Stop all" sid="1200581272817873" type="Audio" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="3122623410747142">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="5913704184703223">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="2641759692480856">
+            <conditions />
+            <actions />
+        </event-block>
+    </events>
 </c2eventsheet>

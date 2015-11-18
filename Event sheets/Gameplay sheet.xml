@@ -7,6 +7,7 @@
         <include>Visual Effects sheet</include>
         <include>ObjectInteraction sheet</include>
         <variable constant="0" name="rspeed" sid="8075979722211104" static="0" type="number">0</variable>
+        <variable constant="0" name="LastStep" sid="2975373908945819" static="0" type="number">0</variable>
         <variable constant="0" name="FirstSwing" sid="6241019882382003" static="0" type="number">1</variable>
         <variable constant="0" name="omega" sid="6350130948550585" static="0" type="number">0</variable>
         <event-group description="" sid="9002456867769247" title="Initialization">
@@ -74,7 +75,42 @@
                                             <param id="0" name="Animation">&quot;Default&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
+                                        <action id="-10" name="Add to" sid="6318505592268812" type="System">
+                                            <param id="0" name="Variable">LastStep</param>
+                                            <param id="1" name="Value">dt</param>
+                                        </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="5078257231268279">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="969999442053016" type="System">
+                                                    <param id="0" name="First value">LastStep</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Second value">0.25</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action disabled="1" id="25" name="Play at object" sid="9154343389790263" type="Audio">
+                                                    <param id="0" name="Audio file">SolidGroundStep01</param>
+                                                    <param id="1" name="Loop">0</param>
+                                                    <param id="2" name="Volume">0</param>
+                                                    <param id="3" name="Object">player</param>
+                                                    <param id="4" name="Inner angle">360</param>
+                                                    <param id="5" name="Outer angle">360</param>
+                                                    <param id="6" name="Outer gain">0</param>
+                                                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="2706540404059833" type="System">
+                                                    <param id="0" name="Variable">LastStep</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="681576186977423">
+                                            <conditions />
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="5558377478157">
                                     <conditions>
@@ -191,6 +227,29 @@
                                                             <param id="1" name="Value">0</param>
                                                         </action>
                                                     </actions>
+                                                    <sub-events>
+                                                        <event-block sid="1552076593263938">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="2971410796520045" type="player">
+                                                                    <param id="0" name="Instance variable">JumpStart</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="25" name="Play at object" sid="868244210045186" type="Audio">
+                                                                    <param id="0" name="Audio file">Jump</param>
+                                                                    <param id="1" name="Loop">0</param>
+                                                                    <param id="2" name="Volume">0</param>
+                                                                    <param id="3" name="Object">player</param>
+                                                                    <param id="4" name="Inner angle">360</param>
+                                                                    <param id="5" name="Outer angle">360</param>
+                                                                    <param id="6" name="Outer gain">0</param>
+                                                                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
@@ -607,6 +666,29 @@
                                                     <param id="1" name="Value">0</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="1077457950626952">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="7815830361839472" type="player">
+                                                            <param id="0" name="Instance variable">JumpStart</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="25" name="Play at object" sid="4453419405609484" type="Audio">
+                                                            <param id="0" name="Audio file">Jump</param>
+                                                            <param id="1" name="Loop">0</param>
+                                                            <param id="2" name="Volume">0</param>
+                                                            <param id="3" name="Object">player</param>
+                                                            <param id="4" name="Inner angle">360</param>
+                                                            <param id="5" name="Outer angle">360</param>
+                                                            <param id="6" name="Outer gain">0</param>
+                                                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -701,6 +783,29 @@
                                                     <param id="1" name="Value">0</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="6924074139333081">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="7218919541081169" type="player">
+                                                            <param id="0" name="Instance variable">JumpStart</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="25" name="Play at object" sid="7688446685536742" type="Audio">
+                                                            <param id="0" name="Audio file">Jump</param>
+                                                            <param id="1" name="Loop">0</param>
+                                                            <param id="2" name="Volume">0</param>
+                                                            <param id="3" name="Object">player</param>
+                                                            <param id="4" name="Inner angle">360</param>
+                                                            <param id="5" name="Outer angle">360</param>
+                                                            <param id="6" name="Outer gain">0</param>
+                                                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -790,6 +895,29 @@
                                                     <param id="1" name="Value">0</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="103509586861474">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="7455624762048301" type="player">
+                                                            <param id="0" name="Instance variable">JumpStart</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="25" name="Play at object" sid="9106796287858839" type="Audio">
+                                                            <param id="0" name="Audio file">Jump</param>
+                                                            <param id="1" name="Loop">0</param>
+                                                            <param id="2" name="Volume">0</param>
+                                                            <param id="3" name="Object">player</param>
+                                                            <param id="4" name="Inner angle">360</param>
+                                                            <param id="5" name="Outer angle">360</param>
+                                                            <param id="6" name="Outer gain">0</param>
+                                                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -2620,6 +2748,9 @@
                 <action disabled="1" id="-8" name="Set angle" sid="7264761834700582" type="SnowParticles">
                     <param id="0" name="Angle">0</param>
                 </action>
+                <action disabled="1" id="0" name="Set text" sid="6141139965666683" type="debug_text">
+                    <param id="0" name="Text">LastStep</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="1549141554175112">
@@ -2684,232 +2815,9 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group description="" sid="7516209432562916" title="Sounds">
-            <sub-events>
-                <event-block sid="6257438188807347">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="1097115504089803" type="Keyboard">
-                            <param id="0" name="Key">32 (Space)</param>
-                        </condition>
-                        <condition id="2" inverted="1" name="Is playing" sid="1714108311069629" type="player">
-                            <param id="0" name="Animation">&quot;Jump&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="33" name="Stop all" sid="568927257336985" type="Audio" />
-                        <action id="0" name="Play" sid="7212233503898307" type="Audio">
-                            <param id="0" name="Audio file">Jump</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">-15</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                        <action id="14" name="Log" sid="5016074205333855" type="Browser">
-                            <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">&quot;JumpCrni&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="5972276421800448">
-                    <conditions />
-                    <actions />
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-block sid="8410791776482174">
-            <conditions>
-                <condition disabled="1" id="-8" name="Compare two values" sid="7158572934377086" type="System">
-                    <param id="0" name="First value">player.Platform.Speed</param>
-                    <param id="1" name="Comparison">4</param>
-                    <param id="2" name="Second value">0</param>
-                </condition>
-                <condition disabled="1" id="2" name="Is playing" sid="7662393162896083" type="player">
-                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                </condition>
-                <condition disabled="1" id="5" inverted="1" name="Is tag playing" sid="5565639677329469" type="Audio">
-                    <param id="0" name="Tag">&quot;SolidGroundStep01&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action disabled="1" id="0" name="Play" sid="8744749256563809" type="Audio">
-                    <param id="0" name="Audio file">SolidGroundStep01</param>
-                    <param id="2" name="Loop">1</param>
-                    <param id="3" name="Volume">-20</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="3141364683791638">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="6058196985114003">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="498077871596481" type="player">
-                    <param id="0" name="Instance variable">StateBefore</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">&quot;Jump&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="6232114282125658">
-                    <conditions>
-                        <condition id="2" name="Is playing" sid="6506486782504074" type="player">
-                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="25" name="Play at object" sid="3095149672899707" type="Audio">
-                            <param id="0" name="Audio file">SolidGroundStep01</param>
-                            <param id="1" name="Loop">1</param>
-                            <param id="2" name="Volume">-10</param>
-                            <param id="3" name="Object">player</param>
-                            <param id="4" name="Inner angle">360</param>
-                            <param id="5" name="Outer angle">360</param>
-                            <param id="6" name="Outer gain">0</param>
-                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="4679055450896572">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="9997841184541687">
-            <conditions />
-            <actions />
-            <sub-events>
-                <event-block sid="9323896449406847">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="2361459605226606" type="Keyboard">
-                            <param id="0" name="Key">68 (D)</param>
-                        </condition>
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="3838594288307249" type="player" />
-                        <condition id="5" inverted="1" name="Is tag playing" sid="463131057938853" type="Audio">
-                            <param id="0" name="Tag">&quot;Jump&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="4967603122534494">
-                            <conditions>
-                                <condition id="2" name="Is playing" sid="6343456800932735" type="player">
-                                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="9905832248853734" type="Audio">
-                                    <param id="0" name="Audio file">SolidGroundStep01</param>
-                                    <param id="2" name="Loop">1</param>
-                                    <param id="3" name="Volume">-20</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="8538746812557249">
-                            <conditions>
-                                <condition id="2" name="Is playing" sid="7850699734565313" type="player">
-                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="33" name="Stop all" sid="837417451608111" type="Audio" />
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="2310072480100945">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="6992219358267723" type="Keyboard">
-                            <param id="0" name="Key">65 (A)</param>
-                        </condition>
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="4592315444504353" type="player" />
-                        <condition id="5" inverted="1" name="Is tag playing" sid="6088823273054447" type="Audio">
-                            <param id="0" name="Tag">&quot;Jump&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block any="1" sid="7148890320611375">
-                            <conditions>
-                                <condition id="2" name="Is playing" sid="1048616554157529" type="player">
-                                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="8327746151085028" type="Audio">
-                                    <param id="0" name="Audio file">SolidGroundStep01</param>
-                                    <param id="2" name="Loop">1</param>
-                                    <param id="3" name="Volume">-20</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="7722706670878159">
-                            <conditions>
-                                <condition id="2" name="Is playing" sid="302565769214023" type="player">
-                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="33" name="Stop all" sid="7388657078992554" type="Audio" />
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="5301604334178769">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block any="1" sid="1379821843270159">
-            <conditions>
-                <condition id="3" name="On key released" sid="180359610983324" type="Keyboard">
-                    <param id="0" name="Key">65 (A)</param>
-                </condition>
-                <condition id="3" name="On key released" sid="8078865049140447" type="Keyboard">
-                    <param id="0" name="Key">68 (D)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="33" name="Stop all" sid="1135945267030183" type="Audio" />
-            </actions>
-        </event-block>
-        <event-block any="1" sid="70935561230943">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="3013247952161">
-            <conditions />
-            <actions />
-        </event-block>
         <event-block sid="5910981287653451">
-            <conditions>
-                <condition disabled="1" id="0" name="On key pressed" sid="1592220543577664" type="Keyboard">
-                    <param id="0" name="Key">16 (Shift)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action disabled="1" id="0" name="Play" sid="8180524387121328" type="Audio">
-                    <param id="0" name="Audio file">Woosh</param>
-                    <param id="2" name="Loop">1</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="9612953522729692">
             <conditions />
             <actions />
-            <sub-events>
-                <event-block sid="4780768036768647">
-                    <conditions />
-                    <actions />
-                </event-block>
-            </sub-events>
         </event-block>
         <event-block sid="7444516034618524">
             <conditions>
