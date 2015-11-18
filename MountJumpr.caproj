@@ -260,8 +260,8 @@
         <object-type global="1" name="PlayerAnimations" sid="6694120917979481">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="wallHoldTimer" sid="5638071058663003" type="number" />
-                <instance-variable name="wallRun" sid="4013776871197225" type="number" />
+                <instance-variable name="StateBefore" sid="2549964533481529" type="string" />
+                <instance-variable name="FrameBefore" sid="6818560049055918" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pin" sid="8350235381894624">
@@ -689,6 +689,7 @@
         <event-sheet>ObjectInteraction sheet.xml</event-sheet>
         <event-sheet>Visual Effects sheet.xml</event-sheet>
         <event-sheet>Audio sheet.xml</event-sheet>
+        <event-sheet>PlayerAnimations sheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />

@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Gameplay sheet</name>
     <events>
+        <include>PlayerAnimations sheet</include>
         <include>Audio sheet</include>
         <include>Visual Effects sheet</include>
         <include>ObjectInteraction sheet</include>
@@ -81,34 +82,15 @@
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="5078257231268279">
-                                            <conditions>
-                                                <condition id="-8" name="Compare two values" sid="969999442053016" type="System">
-                                                    <param id="0" name="First value">LastStep</param>
-                                                    <param id="1" name="Comparison">5</param>
-                                                    <param id="2" name="Second value">0.25</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action disabled="1" id="25" name="Play at object" sid="9154343389790263" type="Audio">
-                                                    <param id="0" name="Audio file">SolidGroundStep01</param>
-                                                    <param id="1" name="Loop">0</param>
-                                                    <param id="2" name="Volume">0</param>
-                                                    <param id="3" name="Object">player</param>
-                                                    <param id="4" name="Inner angle">360</param>
-                                                    <param id="5" name="Outer angle">360</param>
-                                                    <param id="6" name="Outer gain">0</param>
-                                                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
-                                                </action>
-                                                <action id="-9" name="Set value" sid="2706540404059833" type="System">
-                                                    <param id="0" name="Variable">LastStep</param>
-                                                    <param id="1" name="Value">0</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="681576186977423">
+                                        <event-block sid="7794127425619954">
                                             <conditions />
                                             <actions />
+                                            <sub-events>
+                                                <event-block sid="9988699678734543">
+                                                    <conditions />
+                                                    <actions />
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -438,6 +420,19 @@
                                             <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="7005808170009841">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Play" sid="4403907706236757" type="Audio">
+                                                    <param id="0" name="Audio file">SolidGroundStep01</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-15</param>
+                                                    <param id="1" name="Tag (optional)">&quot;WallHit&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="6943374781115245">
                                     <conditions>
@@ -477,6 +472,12 @@
                                                             <param id="0" name="Instance variable">JumpStart</param>
                                                             <param id="1" name="Value">0</param>
                                                         </action>
+                                                        <action id="0" name="Play" sid="6590387112108143" type="Audio">
+                                                            <param id="0" name="Audio file">SolidGroundStep01</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-10</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <event-block sid="208327638283988">
@@ -499,6 +500,12 @@
                                                         <action id="-10" name="Set value" sid="7723550422326935" type="player">
                                                             <param id="0" name="Instance variable">JumpStart</param>
                                                             <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="9745157615157245" type="Audio">
+                                                            <param id="0" name="Audio file">SolidGroundStep01</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-10</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
