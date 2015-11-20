@@ -23,6 +23,7 @@
     <used-behaviors>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
@@ -113,13 +114,23 @@
             </object-type>
         </object-folder>
         <object-folder name="LevelTilesets">
-            <object-type name="StoneWall_lvlherp" sid="1657941014653254">
+            <object-type name="tmHerpetiDerpetiBup" sid="1657941014653254">
                 <plugin id="Tilemap" />
                 <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\StoneWallTileset.png" />
                 <tiles />
             </object-type>
+            <object-type name="tmBelcebub01" sid="5230868837713595">
+                <plugin id="Tilemap" />
+                <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\StoneWallTilesetBlured.png" />
+                <tiles />
+            </object-type>
+            <object-type name="tmBelcebub02" sid="801859616839585">
+                <plugin id="Tilemap" />
+                <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\StoneWallTileset.png" />
+                <tiles />
+            </object-type>
         </object-folder>
-        <object-type global="1" name="player" sid="7723903875284628">
+        <object-type global="1" name="spPlayer" sid="7723903875284628">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="WallHoldTimer" sid="7406337614172975" type="number" />
@@ -661,12 +672,158 @@
         <object-type name="Audio" sid="2543882232611913">
             <plugin id="Audio" />
         </object-type>
+        <object-type name="TiledBackground3" sid="96114387532523">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="TiledBackground4" sid="6518253837697289">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\prvo_ozadje.png" />
+        </object-type>
+        <object-type name="TiledBackground5" sid="7895489958985765">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\prvo_ozadje.png" />
+        </object-type>
+        <object-type name="TiledBackground6" sid="9666113483941435">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\prvo_ozadje.png" />
+        </object-type>
+        <object-type name="TiledBackground7" sid="6431138628319885">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\prvo_ozadje.png" />
+        </object-type>
+        <object-type name="Tilemap2" sid="4841166795963414">
+            <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="6266152734383132">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\StoneWallTileset.png" />
+            <tiles />
+        </object-type>
+        <object-type name="TiledBackground8" sid="4937670286918969">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\prvo_ozadje.png" />
+        </object-type>
+        <object-type name="TiledBackground9" sid="6514401916151499">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\OzdajeProjekt2x.png" />
+        </object-type>
+        <object-type name="TiledBackground10" sid="3289657010194876">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\OzdajeProjekt2x.png" />
+        </object-type>
+        <object-type name="TiledBackground11" sid="7804294714774756">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\OzdajeProjekt2x.png" />
+        </object-type>
+        <object-type name="Sprite" sid="9170022885972008">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Rotate" sid="5734432065926917">
+                    <behavior id="Rotate" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="5566070776786839">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9004049007548639" speed="5">
+                    <frame duration="1" hotspotX="0.4375" hotspotY="0.485714" original-source="D:\Projekt\Kevin-Sašo projekt\Assets\saw01.png">
+                        <collision-poly>
+                            <point x="0.177419" y="0.151786" />
+                            <point x="0.423387" y="0.0870536" />
+                            <point x="0.629032" y="0.142857" />
+                            <point x="0.767137" y="0.344866" />
+                            <point x="0.756048" y="0.622768" />
+                            <point x="0.649194" y="0.908929" />
+                            <point x="0.282258" y="0.919643" />
+                            <point x="0.177419" y="0.776786" />
+                            <point x="0.0806452" y="0.508929" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="8992986700393011">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5323682376197521" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Projekt\Kevin-Sašo projekt\Assets\saw.png">
+                        <collision-poly>
+                            <point x="0.199105" y="0.0853932" />
+                            <point x="0.368009" y="0.0134832" />
+                            <point x="0.563758" y="1.71447e-008" />
+                            <point x="0.757271" y="0.0685393" />
+                            <point x="0.888143" y="0.186517" />
+                            <point x="0.979866" y="0.360674" />
+                            <point x="1" y="0.550561" />
+                            <point x="0.93736" y="0.73146" />
+                            <point x="0.809843" y="0.896629" />
+                            <point x="0.635347" y="0.986517" />
+                            <point x="0.425615" y="0.999438" />
+                            <point x="0.253915" y="0.93146" />
+                            <point x="0.111857" y="0.804494" />
+                            <point x="0.0223714" y="0.639325" />
+                            <point x="0" y="0.442696" />
+                            <point x="0.0693512" y="0.25955" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="4680762391222268">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9414592124627509" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite4" sid="2214365466856728">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1305716286482636" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite5" sid="6840039634998556">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="3189188403813945">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="7650538402704235">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6376450295709057" speed="5">
+                    <frame duration="1" hotspotX="0.513333" hotspotY="0.492" original-source="D:\Projekt\Kevin-Sašo projekt\Assets\saw.png">
+                        <collision-poly>
+                            <point x="0.62" y="0.0840001" />
+                            <point x="0.793333" y="0.224" />
+                            <point x="0.866667" y="0.46" />
+                            <point x="0.83" y="0.696" />
+                            <point x="0.62" y="0.936" />
+                            <point x="0.316667" y="0.895996" />
+                            <point x="0.156667" y="0.64" />
+                            <point x="0.14" y="0.44" />
+                            <point x="0.25" y="0.176" />
+                            <point x="0.44" y="0.056" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="LevelLayout" plugin-id="Tilemap" sid="8055901268729403">
             <members>
-                <member>StoneWall_lvlherp</member>
                 <member>TilemapStoneWall_lvl_2</member>
+                <member>tmHerpetiDerpetiBup</member>
             </members>
             <behaviors>
                 <behavior-type name="Solid2" sid="5774691617272655">
@@ -683,6 +840,7 @@
         <layout>Layout 1.xml</layout>
         <layout>HerpetiDerpetiBup.xml</layout>
         <layout>Layout 2.xml</layout>
+        <layout>Belcebub.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Gameplay sheet.xml</event-sheet>

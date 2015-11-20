@@ -9,7 +9,7 @@
                 <condition id="0" name="On key pressed" sid="5079269596476207" type="Keyboard">
                     <param id="0" name="Key">32 (Space)</param>
                 </condition>
-                <condition id="2" inverted="1" name="Is playing" sid="7610659813452702" type="player">
+                <condition id="2" inverted="1" name="Is playing" sid="7610659813452702" type="spPlayer">
                     <param id="0" name="Animation">&quot;Jump&quot;</param>
                 </condition>
             </conditions>
@@ -31,14 +31,14 @@
             <sub-events>
                 <event-block disabled="1" sid="5390050454204831">
                     <conditions>
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="1348301981384574" type="player" />
-                        <condition id="-7" name="Compare instance variable" sid="6250904023986069" type="player">
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="1348301981384574" type="spPlayer" />
+                        <condition id="-7" name="Compare instance variable" sid="6250904023986069" type="spPlayer">
                             <param id="0" name="Instance variable">StateBefore</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;Jump&quot;</param>
                         </condition>
                         <condition id="-8" name="Compare two values" sid="6652914598260522" type="System">
-                            <param id="0" name="First value">player.Platform.Speed</param>
+                            <param id="0" name="First value">spPlayer.Platform.Speed</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Second value">0</param>
                         </condition>
@@ -82,13 +82,13 @@
                         <condition id="0" name="On key pressed" sid="5442626016623147" type="Keyboard">
                             <param id="0" name="Key">68 (D)</param>
                         </condition>
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="7894527297368357" type="player" />
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="7894527297368357" type="spPlayer" />
                     </conditions>
                     <actions />
                     <sub-events>
                         <event-block disabled="1" sid="7690777809303245">
                             <conditions>
-                                <condition id="2" name="Is playing" sid="1705249252791649" type="player">
+                                <condition id="2" name="Is playing" sid="1705249252791649" type="spPlayer">
                                     <param id="0" name="Animation">&quot;Default&quot;</param>
                                 </condition>
                             </conditions>
@@ -109,13 +109,13 @@
                         <condition id="0" name="On key pressed" sid="8640059677612421" type="Keyboard">
                             <param id="0" name="Key">65 (A)</param>
                         </condition>
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="10328403224481" type="player" />
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="10328403224481" type="spPlayer" />
                     </conditions>
                     <actions />
                     <sub-events>
                         <event-block any="1" disabled="1" sid="1898074597809676">
                             <conditions>
-                                <condition id="2" name="Is playing" sid="7254693078592697" type="player">
+                                <condition id="2" name="Is playing" sid="7254693078592697" type="spPlayer">
                                     <param id="0" name="Animation">&quot;Default&quot;</param>
                                 </condition>
                             </conditions>
@@ -141,7 +141,7 @@
                 </event-block>
                 <event-block disabled="1" sid="4452955140345249">
                     <conditions>
-                        <condition id="2" name="Is playing" sid="7023998371029471" type="player">
+                        <condition id="2" name="Is playing" sid="7023998371029471" type="spPlayer">
                             <param id="0" name="Animation">&quot;Default&quot;</param>
                         </condition>
                     </conditions>
@@ -149,10 +149,10 @@
                     <sub-events>
                         <event-block any="1" disabled="1" sid="9861927999635696">
                             <conditions>
-                                <condition behavior="Platform" id="10" name="Is by wall" sid="5179939419699014" type="player">
+                                <condition behavior="Platform" id="10" name="Is by wall" sid="5179939419699014" type="spPlayer">
                                     <param id="0" name="Side">0</param>
                                 </condition>
-                                <condition behavior="Platform" id="10" name="Is by wall" sid="5283925807612761" type="player">
+                                <condition behavior="Platform" id="10" name="Is by wall" sid="5283925807612761" type="spPlayer">
                                     <param id="0" name="Side">1</param>
                                 </condition>
                             </conditions>
