@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PlayerAnimations sheet</name>
+    <events>
+        <event-block sid="7579836334075227">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2832052315448705" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="7188071850117704" type="System">
+                    <param id="0" name="Object to create">PlayerAnimations</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">spPlayer.X</param>
+                    <param id="3" name="Y">spPlayer.Y</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="751622524655544" type="PlayerAnimations">
+                    <param id="0" name="Pin to">spPlayer</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2716188073006695" type="PlayerAnimations">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2310915257704854">
+            <conditions>
+                <condition id="2" name="Is playing" sid="7155034200403082" type="spPlayer">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7487906055969901">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="5479704901514503" type="System">
+                            <param id="0" name="First value">spPlayer.Platform.Speed</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3668900250493074">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4057533509691738" type="PlayerAnimations">
+                                    <param id="0" name="Instance variable">StateBefore</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;Running&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="5667639164307978" type="PlayerAnimations">
+                                    <param id="0" name="Animation">&quot;Running&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8096129887165618">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="802417524917368" type="System">
+                                    <param id="0" name="First value">PlayerAnimations.AnimationFrame</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">PlayerAnimations.FrameBefore</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="211371928110931">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="8133924832268943" type="PlayerAnimations">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="4924251124073617" type="PlayerAnimations">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="25" name="Play at object" sid="9887131844472032" type="Audio">
+                                            <param id="0" name="Audio file">SolidGroundStep01</param>
+                                            <param id="1" name="Loop">0</param>
+                                            <param id="2" name="Volume">0</param>
+                                            <param id="3" name="Object">spPlayer</param>
+                                            <param id="4" name="Inner angle">360</param>
+                                            <param id="5" name="Outer angle">360</param>
+                                            <param id="6" name="Outer gain">0</param>
+                                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4026724991043291">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="5739746962652473" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="9574110512100509" type="PlayerAnimations">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1062788239995161">
+            <conditions>
+                <condition id="7" name="Is mirrored" sid="4414761167559198" type="spPlayer" />
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="6580921256764898" type="PlayerAnimations">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3526782983929552">
+            <conditions>
+                <condition id="-22" name="Else" sid="8149231285338145" type="System" />
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="3861840840789133" type="PlayerAnimations">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2976520182096505">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="4445721001011369" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="3591783472943811" type="PlayerAnimations">
+                    <param id="0" name="Instance variable">FrameBefore</param>
+                    <param id="1" name="Value">PlayerAnimations.AnimationFrame</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
