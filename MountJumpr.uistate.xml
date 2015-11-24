@@ -16,13 +16,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="3">Level 2</layout>
         <layout order="4">Layout 1</layout>
         <layout order="5">HerpetiDerpetiBup</layout>
-        <layout order="7">Layout 2</layout>
-        <layout active="1" order="12">Belcebub</layout>
-        <event-sheet order="9">Gameplay sheet</event-sheet>
+        <layout active="1" order="7">Layout 2</layout>
+        <layout order="12">Belcebub</layout>
         <event-sheet order="6">ObjectInteraction sheet</event-sheet>
         <event-sheet order="8">Visual Effects sheet</event-sheet>
-        <event-sheet order="11">Audio sheet</event-sheet>
+        <event-sheet order="9">Gameplay sheet</event-sheet>
         <event-sheet order="10">PlayerAnimations sheet</event-sheet>
+        <event-sheet order="11">Audio sheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

@@ -129,6 +129,11 @@
                 <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\StoneWallTileset.png" />
                 <tiles />
             </object-type>
+            <object-type name="tmLayout2" sid="525323638541415">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\StoneWallTileset.png" />
+                <tiles />
+            </object-type>
         </object-folder>
         <object-type global="1" name="spPlayer" sid="7723903875284628">
             <plugin id="Sprite" />
@@ -824,6 +829,7 @@
             <members>
                 <member>TilemapStoneWall_lvl_2</member>
                 <member>tmHerpetiDerpetiBup</member>
+                <member>tmLayout2</member>
             </members>
             <behaviors>
                 <behavior-type name="Solid2" sid="5774691617272655">

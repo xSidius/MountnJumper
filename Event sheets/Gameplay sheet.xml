@@ -40,879 +40,171 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="705772945378927" title="Player controlls">
+        <event-group description="" sid="6592181783067031" title="Get Player State">
             <sub-events>
-                <event-block sid="3164647708195458">
+                <event-block sid="3971454442416559">
                     <conditions>
-                        <condition id="-19" name="Pick all" sid="3262335682021139" type="System">
-                            <param id="0" name="Object">Line</param>
+                        <condition id="-7" name="Compare instance variable" sid="4976062641353479" type="spPlayer">
+                            <param id="0" name="Instance variable">StateBefore</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Default&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="9344445070491902" type="Line">
-                            <param id="0" name="Instance variable">CurrentLength</param>
-                            <param id="1" name="Value">distance(spPlayer.X,spPlayer.Y,Line.EndX,Line.EndY)</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-group description="" sid="6592181783067031" title="Get Player State">
+                    <actions />
                     <sub-events>
-                        <event-block sid="3971454442416559">
+                        <event-block sid="5857408212084134">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="4976062641353479" type="spPlayer">
-                                    <param id="0" name="Instance variable">StateBefore</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;Default&quot;</param>
-                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="5071465292235424" type="spPlayer" />
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="4" name="Set animation" sid="2964153490120684" type="spPlayer">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="6318505592268812" type="System">
+                                    <param id="0" name="Variable">LastStep</param>
+                                    <param id="1" name="Value">dt</param>
+                                </action>
+                            </actions>
                             <sub-events>
-                                <event-block sid="5857408212084134">
-                                    <conditions>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="5071465292235424" type="spPlayer" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="2964153490120684" type="spPlayer">
-                                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="-10" name="Add to" sid="6318505592268812" type="System">
-                                            <param id="0" name="Variable">LastStep</param>
-                                            <param id="1" name="Value">dt</param>
-                                        </action>
-                                    </actions>
+                                <event-block sid="7794127425619954">
+                                    <conditions />
+                                    <actions />
                                     <sub-events>
-                                        <event-block sid="7794127425619954">
+                                        <event-block sid="9988699678734543">
                                             <conditions />
                                             <actions />
-                                            <sub-events>
-                                                <event-block sid="9988699678734543">
-                                                    <conditions />
-                                                    <actions />
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="5558377478157">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="1941687078404272" type="System" />
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block any="1" sid="5853677411720052">
-                                            <conditions>
-                                                <condition behavior="Platform" id="10" name="Is by wall" sid="5223340222287438" type="spPlayer">
-                                                    <param id="0" name="Side">0</param>
-                                                </condition>
-                                                <condition behavior="Platform" id="10" name="Is by wall" sid="7098001950372805" type="spPlayer">
-                                                    <param id="0" name="Side">1</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="308015247720012">
-                                                    <conditions>
-                                                        <condition id="-8" name="Compare two values" sid="3620719372623228" type="System">
-                                                            <param id="0" name="First value">spPlayer.Platform.VectorY</param>
-                                                            <param id="1" name="Comparison">3</param>
-                                                            <param id="2" name="Second value">0</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="7579702841921481" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;WallUp&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action id="14" name="Log" sid="762466808138588" type="Browser">
-                                                            <param id="0" name="Type">0</param>
-                                                            <param id="1" name="Message">&quot;wallrun&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="5555708852885295">
-                                                    <conditions>
-                                                        <condition id="-22" name="Else" sid="2998307697542781" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="4808316308706731" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;WallHold&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="4769991058853301" type="spPlayer">
-                                                            <param id="0" name="Instance variable">WallHoldTimer</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                        <event-block sid="7945953862661448">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="7116492747510932" type="System" />
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="4385049116462274">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="9740748701396095" type="spPlayer">
-                                                            <param id="0" name="Instance variable">Anchored</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">1</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions />
-                                                    <sub-events>
-                                                        <event-block sid="7961994086366856">
-                                                            <conditions>
-                                                                <condition id="-8" name="Compare two values" sid="4581639894027178" type="System">
-                                                                    <param id="0" name="First value">distance(spPlayer.X,spPlayer.Y,Line.EndX,Line.EndY)</param>
-                                                                    <param id="1" name="Comparison">5</param>
-                                                                    <param id="2" name="Second value">Line.SetLength</param>
-                                                                </condition>
-                                                            </conditions>
-                                                            <actions>
-                                                                <action id="4" name="Set animation" sid="5783355516785954" type="spPlayer">
-                                                                    <param id="0" name="Animation">&quot;Swing&quot;</param>
-                                                                    <param id="1" name="From">1</param>
-                                                                </action>
-                                                            </actions>
-                                                        </event-block>
-                                                        <event-block sid="4681054201136323">
-                                                            <conditions>
-                                                                <condition id="-22" name="Else" sid="8624606090056296" type="System" />
-                                                            </conditions>
-                                                            <actions>
-                                                                <action id="4" name="Set animation" sid="7827382501508804" type="spPlayer">
-                                                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
-                                                                    <param id="1" name="From">1</param>
-                                                                </action>
-                                                                <action id="-10" name="Set value" sid="4004542795881309" type="spPlayer">
-                                                                    <param id="0" name="Instance variable">JumpTimer</param>
-                                                                    <param id="1" name="Value">0</param>
-                                                                </action>
-                                                            </actions>
-                                                        </event-block>
-                                                    </sub-events>
-                                                </event-block>
-                                                <event-block sid="5926586715801902">
-                                                    <conditions>
-                                                        <condition id="-22" name="Else" sid="9520401904343639" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="802561141754397" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;Jump&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="8947227570430229" type="spPlayer">
-                                                            <param id="0" name="Instance variable">JumpTimer</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                    </actions>
-                                                    <sub-events>
-                                                        <event-block sid="1552076593263938">
-                                                            <conditions>
-                                                                <condition id="-7" name="Compare instance variable" sid="2971410796520045" type="spPlayer">
-                                                                    <param id="0" name="Instance variable">JumpStart</param>
-                                                                    <param id="1" name="Comparison">0</param>
-                                                                    <param id="2" name="Value">1</param>
-                                                                </condition>
-                                                            </conditions>
-                                                            <actions>
-                                                                <action id="25" name="Play at object" sid="868244210045186" type="Audio">
-                                                                    <param id="0" name="Audio file">Jump</param>
-                                                                    <param id="1" name="Loop">0</param>
-                                                                    <param id="2" name="Volume">0</param>
-                                                                    <param id="3" name="Object">spPlayer</param>
-                                                                    <param id="4" name="Inner angle">360</param>
-                                                                    <param id="5" name="Outer angle">360</param>
-                                                                    <param id="6" name="Outer gain">0</param>
-                                                                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
-                                                                </action>
-                                                            </actions>
-                                                        </event-block>
-                                                    </sub-events>
-                                                </event-block>
-                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="4750499102205054">
+                        <event-block sid="5558377478157">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="5837365853157818" type="spPlayer">
-                                    <param id="0" name="Instance variable">StateBefore</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;Swing&quot;</param>
-                                </condition>
+                                <condition id="-22" name="Else" sid="1941687078404272" type="System" />
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="6196062543354538">
+                                <event-block any="1" sid="5853677411720052">
                                     <conditions>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="2094606642492045" type="spPlayer" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="5995309188639996" type="spPlayer">
-                                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="618436995852045" type="System">
-                                            <param id="0" name="Variable">FirstSwing</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="2027340007225644">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="2690976345204917" type="System" />
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="5223340222287438" type="spPlayer">
+                                            <param id="0" name="Side">0</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="7098001950372805" type="spPlayer">
+                                            <param id="0" name="Side">1</param>
+                                        </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block any="1" sid="1954787934985448">
+                                        <event-block sid="308015247720012">
                                             <conditions>
-                                                <condition behavior="Platform" id="10" name="Is by wall" sid="2451891162785718" type="spPlayer">
-                                                    <param id="0" name="Side">0</param>
-                                                </condition>
-                                                <condition behavior="Platform" id="10" name="Is by wall" sid="5372052958714322" type="spPlayer">
-                                                    <param id="0" name="Side">1</param>
+                                                <condition id="-8" name="Compare two values" sid="3620719372623228" type="System">
+                                                    <param id="0" name="First value">spPlayer.Platform.VectorY</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Second value">0</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="821934067591966" type="spPlayer">
-                                                    <param id="0" name="Animation">&quot;Swing&quot;</param>
+                                                <action id="4" name="Set animation" sid="7579702841921481" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;WallUp&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
-                                            </actions>
-                                            <sub-events>
-                                                <event-block sid="5108870032477376">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="8027463928557091" type="spPlayer">
-                                                            <param id="0" name="Instance variable">Anchored</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">1</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="5564782727016686" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;Swing&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="2761288412335442">
-                                                    <conditions>
-                                                        <condition id="-22" name="Else" sid="9219036593090493" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="5214357939248699" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;WallUp&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                        <event-block sid="8712983257049803">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="396884744229679" type="System" />
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="3083034852674131">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="7181246385904066" type="spPlayer">
-                                                            <param id="0" name="Instance variable">Anchored</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">1</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="9150996846666159" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;Swing&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                    </actions>
-                                                    <sub-events>
-                                                        <event-block sid="5415747618429558">
-                                                            <conditions>
-                                                                <condition id="-8" name="Compare two values" sid="6806472208812823" type="System">
-                                                                    <param id="0" name="First value">Line.CurrentLength</param>
-                                                                    <param id="1" name="Comparison">2</param>
-                                                                    <param id="2" name="Second value">spPlayer.MinLine</param>
-                                                                </condition>
-                                                            </conditions>
-                                                            <actions>
-                                                                <action id="4" name="Set animation" sid="5136213923498303" type="spPlayer">
-                                                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
-                                                                    <param id="1" name="From">1</param>
-                                                                </action>
-                                                                <action id="-10" name="Set value" sid="8891815128578466" type="spPlayer">
-                                                                    <param id="0" name="Instance variable">JumpTimer</param>
-                                                                    <param id="1" name="Value">0</param>
-                                                                </action>
-                                                            </actions>
-                                                        </event-block>
-                                                        <event-block sid="6792455508646519">
-                                                            <conditions>
-                                                                <condition id="-22" name="Else" sid="6593341159756009" type="System" />
-                                                            </conditions>
-                                                            <actions>
-                                                                <action id="4" name="Set animation" sid="2921081821141799" type="spPlayer">
-                                                                    <param id="0" name="Animation">&quot;Swing&quot;</param>
-                                                                    <param id="1" name="From">1</param>
-                                                                </action>
-                                                            </actions>
-                                                        </event-block>
-                                                    </sub-events>
-                                                </event-block>
-                                                <event-block sid="1523270588853447">
-                                                    <conditions>
-                                                        <condition id="-22" name="Else" sid="8147464306737057" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="9992992159397751" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;Jump&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="3176287973100126" type="spPlayer">
-                                                            <param id="0" name="Instance variable">JumpTimer</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="9299149071035911">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="6779110917520905" type="spPlayer">
-                                    <param id="0" name="Instance variable">StateBefore</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;Jump&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="5429988255113716">
-                                    <conditions>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="6236024354755773" type="spPlayer" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="5233529798486859" type="spPlayer">
-                                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="14" name="Log" sid="3339805781763882" type="Browser">
-                                            <param id="0" name="Type">0</param>
-                                            <param id="1" name="Message">&quot;herp&quot;</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="5968082884699786" type="spPlayer">
-                                            <param id="0" name="Instance variable">JumpEnd</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="2472105713062841" type="spPlayer">
-                                            <param id="0" name="Instance variable">JumpStart</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                    </actions>
-                                    <sub-events>
-                                        <event-block sid="7005808170009841">
-                                            <conditions />
-                                            <actions>
-                                                <action id="0" name="Play" sid="4403907706236757" type="Audio">
-                                                    <param id="0" name="Audio file">SolidGroundStep01</param>
-                                                    <param id="2" name="Loop">0</param>
-                                                    <param id="3" name="Volume">-15</param>
-                                                    <param id="1" name="Tag (optional)">&quot;WallHit&quot;</param>
+                                                <action id="14" name="Log" sid="762466808138588" type="Browser">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">&quot;wallrun&quot;</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="6943374781115245">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="2213271041184155" type="System" />
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block any="1" sid="2775419768758747">
+                                        <event-block sid="5555708852885295">
                                             <conditions>
-                                                <condition behavior="Platform" id="10" name="Is by wall" sid="9959019632636533" type="spPlayer">
-                                                    <param id="0" name="Side">0</param>
-                                                </condition>
-                                                <condition behavior="Platform" id="10" name="Is by wall" sid="8368609621125771" type="spPlayer">
-                                                    <param id="0" name="Side">1</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="2353987678371666">
-                                                    <conditions>
-                                                        <condition id="-8" name="Compare two values" sid="4941573424635237" type="System">
-                                                            <param id="0" name="First value">spPlayer.Platform.VectorY</param>
-                                                            <param id="1" name="Comparison">3</param>
-                                                            <param id="2" name="Second value">0</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="7863129428437025" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;WallUp&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="20420990482455" type="spPlayer">
-                                                            <param id="0" name="Instance variable">JumpEnd</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="4277990076385289" type="spPlayer">
-                                                            <param id="0" name="Instance variable">JumpStart</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                        <action id="0" name="Play" sid="6590387112108143" type="Audio">
-                                                            <param id="0" name="Audio file">SolidGroundStep01</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-10</param>
-                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="208327638283988">
-                                                    <conditions>
-                                                        <condition id="-22" name="Else" sid="9772612545316848" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="672430349491362" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;WallHold&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="2340775329228307" type="spPlayer">
-                                                            <param id="0" name="Instance variable">WallHoldTimer</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="9454920551535254" type="spPlayer">
-                                                            <param id="0" name="Instance variable">JumpEnd</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="7723550422326935" type="spPlayer">
-                                                            <param id="0" name="Instance variable">JumpStart</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                        <action id="0" name="Play" sid="9745157615157245" type="Audio">
-                                                            <param id="0" name="Audio file">SolidGroundStep01</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-10</param>
-                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                        <event-block sid="4767823996695235">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="1120867532153224" type="System" />
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="687441673133062">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="4923922903768792" type="spPlayer">
-                                                            <param id="0" name="Instance variable">Anchored</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">1</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions />
-                                                    <sub-events>
-                                                        <event-block any="1" sid="95607642985282">
-                                                            <conditions>
-                                                                <condition id="-8" name="Compare two values" sid="2962699308095168" type="System">
-                                                                    <param id="0" name="First value">Line.CurrentLength</param>
-                                                                    <param id="1" name="Comparison">2</param>
-                                                                    <param id="2" name="Second value">spPlayer.MinLine</param>
-                                                                </condition>
-                                                                <condition id="-8" name="Compare two values" sid="5530173628608755" type="System">
-                                                                    <param id="0" name="First value">spPlayer.Platform.VectorY</param>
-                                                                    <param id="1" name="Comparison">2</param>
-                                                                    <param id="2" name="Second value">0</param>
-                                                                </condition>
-                                                            </conditions>
-                                                            <actions>
-                                                                <action id="4" name="Set animation" sid="9341858551236251" type="spPlayer">
-                                                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
-                                                                    <param id="1" name="From">1</param>
-                                                                </action>
-                                                            </actions>
-                                                        </event-block>
-                                                        <event-block sid="140242249340252">
-                                                            <conditions>
-                                                                <condition id="-22" name="Else" sid="7087076966107619" type="System" />
-                                                            </conditions>
-                                                            <actions>
-                                                                <action id="4" name="Set animation" sid="682757754885161" type="spPlayer">
-                                                                    <param id="0" name="Animation">&quot;Swing&quot;</param>
-                                                                    <param id="1" name="From">1</param>
-                                                                </action>
-                                                                <action id="-10" name="Set value" sid="9715397791967328" type="spPlayer">
-                                                                    <param id="0" name="Instance variable">JumpEnd</param>
-                                                                    <param id="1" name="Value">0</param>
-                                                                </action>
-                                                                <action id="-10" name="Set value" sid="9068568978696809" type="spPlayer">
-                                                                    <param id="0" name="Instance variable">JumpStart</param>
-                                                                    <param id="1" name="Value">0</param>
-                                                                </action>
-                                                            </actions>
-                                                        </event-block>
-                                                    </sub-events>
-                                                </event-block>
-                                                <event-block sid="3320469934096092">
-                                                    <conditions>
-                                                        <condition id="-22" name="Else" sid="132160160881749" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="5003346466598649" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;Jump&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="7166735883228387">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="2528534078019238" type="spPlayer">
-                                    <param id="0" name="Instance variable">StateBefore</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;WallUp&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="1404131032561642">
-                                    <conditions>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="9493011826316188" type="spPlayer" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="1579933181454555" type="spPlayer">
-                                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="14" name="Log" sid="4507482793633004" type="Browser">
-                                            <param id="0" name="Type">0</param>
-                                            <param id="1" name="Message">&quot;herp&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="5628645852604829">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="9124103582071141" type="System" />
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block any="1" sid="1818737488630513">
-                                            <conditions>
-                                                <condition behavior="Platform" id="10" name="Is by wall" sid="4051439043870625" type="spPlayer">
-                                                    <param id="0" name="Side">0</param>
-                                                </condition>
-                                                <condition behavior="Platform" id="10" name="Is by wall" sid="4739891775581144" type="spPlayer">
-                                                    <param id="0" name="Side">1</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="697622194893005">
-                                                    <conditions>
-                                                        <condition id="-8" name="Compare two values" sid="3929420417426454" type="System">
-                                                            <param id="0" name="First value">spPlayer.Platform.VectorY</param>
-                                                            <param id="1" name="Comparison">3</param>
-                                                            <param id="2" name="Second value">0</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="3830779413230278" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;WallUp&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="2060783560208909">
-                                                    <conditions>
-                                                        <condition id="-22" name="Else" sid="1715586124374488" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="7182994004314004" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;WallHold&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="9572775892410144" type="spPlayer">
-                                                            <param id="0" name="Instance variable">WallHoldTimer</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                        <event-block sid="214703026370088">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="5424302364355206" type="System" />
+                                                <condition id="-22" name="Else" sid="2998307697542781" type="System" />
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="2554658333576983" type="spPlayer">
-                                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="7909115698553361" type="spPlayer">
-                                                    <param id="0" name="Instance variable">JumpTimer</param>
-                                                    <param id="1" name="Value">0</param>
-                                                </action>
-                                            </actions>
-                                            <sub-events>
-                                                <event-block sid="1077457950626952">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="7815830361839472" type="spPlayer">
-                                                            <param id="0" name="Instance variable">JumpStart</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">1</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="25" name="Play at object" sid="4453419405609484" type="Audio">
-                                                            <param id="0" name="Audio file">Jump</param>
-                                                            <param id="1" name="Loop">0</param>
-                                                            <param id="2" name="Volume">0</param>
-                                                            <param id="3" name="Object">spPlayer</param>
-                                                            <param id="4" name="Inner angle">360</param>
-                                                            <param id="5" name="Outer angle">360</param>
-                                                            <param id="6" name="Outer gain">0</param>
-                                                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="3092939760135149">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="653973776157448" type="spPlayer">
-                                    <param id="0" name="Instance variable">StateBefore</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;WallHold&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="9592680276518387">
-                                    <conditions>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="4711891511755449" type="spPlayer" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="5270237408497957" type="spPlayer">
-                                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="14" name="Log" sid="2175554681457941" type="Browser">
-                                            <param id="0" name="Type">0</param>
-                                            <param id="1" name="Message">&quot;herp&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="5536853306603823">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="6598769048933742" type="System" />
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block any="1" sid="8800426634902894">
-                                            <conditions>
-                                                <condition behavior="Platform" id="10" name="Is by wall" sid="3829744905377549" type="spPlayer">
-                                                    <param id="0" name="Side">0</param>
-                                                </condition>
-                                                <condition behavior="Platform" id="10" name="Is by wall" sid="2653098227824536" type="spPlayer">
-                                                    <param id="0" name="Side">1</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="4" name="Set animation" sid="2131527534607881" type="spPlayer">
+                                                <action id="4" name="Set animation" sid="4808316308706731" type="spPlayer">
                                                     <param id="0" name="Animation">&quot;WallHold&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
-                                            </actions>
-                                            <sub-events>
-                                                <event-block sid="5458770916095828">
-                                                    <conditions>
-                                                        <condition id="-8" name="Compare two values" sid="3607226717175459" type="System">
-                                                            <param id="0" name="First value">spPlayer.WallHoldTimer</param>
-                                                            <param id="1" name="Comparison">5</param>
-                                                            <param id="2" name="Second value">spPlayer.WallHoldLimit</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="1127162717763413" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;WallDown&quot;</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="9877628278838959">
-                                                    <conditions>
-                                                        <condition id="-22" name="Else" sid="4199418494722118" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="-11" name="Add to" sid="8785090282505373" type="spPlayer">
-                                                            <param id="0" name="Instance variable">WallHoldTimer</param>
-                                                            <param id="1" name="Value">dt</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                        <event-block sid="5938530847030622">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="4754318958889523" type="System" />
-                                            </conditions>
-                                            <actions>
-                                                <action id="4" name="Set animation" sid="7506432707884438" type="spPlayer">
-                                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="2181535224075307" type="spPlayer">
-                                                    <param id="0" name="Instance variable">JumpTimer</param>
+                                                <action id="-10" name="Set value" sid="4769991058853301" type="spPlayer">
+                                                    <param id="0" name="Instance variable">WallHoldTimer</param>
                                                     <param id="1" name="Value">0</param>
                                                 </action>
                                             </actions>
-                                            <sub-events>
-                                                <event-block sid="6924074139333081">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="7218919541081169" type="spPlayer">
-                                                            <param id="0" name="Instance variable">JumpStart</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">1</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="25" name="Play at object" sid="7688446685536742" type="Audio">
-                                                            <param id="0" name="Audio file">Jump</param>
-                                                            <param id="1" name="Loop">0</param>
-                                                            <param id="2" name="Volume">0</param>
-                                                            <param id="3" name="Object">spPlayer</param>
-                                                            <param id="4" name="Inner angle">360</param>
-                                                            <param id="5" name="Outer angle">360</param>
-                                                            <param id="6" name="Outer gain">0</param>
-                                                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="58345476811083">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="7601130211057073" type="spPlayer">
-                                    <param id="0" name="Instance variable">StateBefore</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;WallDown&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="9819154817805215">
+                                <event-block sid="7945953862661448">
                                     <conditions>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="867633182080902" type="spPlayer" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="7092328648296174" type="spPlayer">
-                                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="14" name="Log" sid="3158911682227553" type="Browser">
-                                            <param id="0" name="Type">0</param>
-                                            <param id="1" name="Message">&quot;herp&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="9893386342896201">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="2410314845445302" type="System" />
+                                        <condition id="-22" name="Else" sid="7116492747510932" type="System" />
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block any="1" sid="8512556889347036">
+                                        <event-block sid="4385049116462274">
                                             <conditions>
-                                                <condition behavior="Platform" id="10" name="Is by wall" sid="9623126922759795" type="spPlayer">
-                                                    <param id="0" name="Side">0</param>
-                                                </condition>
-                                                <condition behavior="Platform" id="10" name="Is by wall" sid="5342776644690991" type="spPlayer">
-                                                    <param id="0" name="Side">1</param>
+                                                <condition id="-7" name="Compare instance variable" sid="9740748701396095" type="spPlayer">
+                                                    <param id="0" name="Instance variable">Anchored</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
                                             <actions />
                                             <sub-events>
-                                                <event-block sid="5808720180199671">
+                                                <event-block sid="7961994086366856">
                                                     <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="6568906037885538" type="spPlayer">
-                                                            <param id="0" name="Instance variable">Anchored</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">1</param>
+                                                        <condition id="-8" name="Compare two values" sid="4581639894027178" type="System">
+                                                            <param id="0" name="First value">distance(spPlayer.X,spPlayer.Y,Line.EndX,Line.EndY)</param>
+                                                            <param id="1" name="Comparison">5</param>
+                                                            <param id="2" name="Second value">Line.SetLength</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="4" name="Set animation" sid="5548317343529207" type="spPlayer">
+                                                        <action id="4" name="Set animation" sid="5783355516785954" type="spPlayer">
                                                             <param id="0" name="Animation">&quot;Swing&quot;</param>
                                                             <param id="1" name="From">1</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
-                                                <event-block sid="4497285370058653">
+                                                <event-block sid="4681054201136323">
                                                     <conditions>
-                                                        <condition id="-22" name="Else" sid="8352104879480351" type="System" />
+                                                        <condition id="-22" name="Else" sid="8624606090056296" type="System" />
                                                     </conditions>
                                                     <actions>
-                                                        <action id="4" name="Set animation" sid="1750479782968752" type="spPlayer">
-                                                            <param id="0" name="Animation">&quot;WallDown&quot;</param>
+                                                        <action id="4" name="Set animation" sid="7827382501508804" type="spPlayer">
+                                                            <param id="0" name="Animation">&quot;Jump&quot;</param>
                                                             <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="4004542795881309" type="spPlayer">
+                                                            <param id="0" name="Instance variable">JumpTimer</param>
+                                                            <param id="1" name="Value">0</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
-                                        <event-block sid="228679837614099">
+                                        <event-block sid="5926586715801902">
                                             <conditions>
-                                                <condition id="-22" name="Else" sid="9409387125713787" type="System" />
+                                                <condition id="-22" name="Else" sid="9520401904343639" type="System" />
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="1178366237531003" type="spPlayer">
+                                                <action id="4" name="Set animation" sid="802561141754397" type="spPlayer">
                                                     <param id="0" name="Animation">&quot;Jump&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
-                                                <action id="-10" name="Set value" sid="1951595410055131" type="spPlayer">
+                                                <action id="-10" name="Set value" sid="8947227570430229" type="spPlayer">
                                                     <param id="0" name="Instance variable">JumpTimer</param>
                                                     <param id="1" name="Value">0</param>
                                                 </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block sid="103509586861474">
+                                                <event-block sid="1552076593263938">
                                                     <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="7455624762048301" type="spPlayer">
+                                                        <condition id="-7" name="Compare instance variable" sid="2971410796520045" type="spPlayer">
                                                             <param id="0" name="Instance variable">JumpStart</param>
                                                             <param id="1" name="Comparison">0</param>
                                                             <param id="2" name="Value">1</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="25" name="Play at object" sid="9106796287858839" type="Audio">
+                                                        <action id="25" name="Play at object" sid="868244210045186" type="Audio">
                                                             <param id="0" name="Audio file">Jump</param>
                                                             <param id="1" name="Loop">0</param>
                                                             <param id="2" name="Volume">0</param>
@@ -931,7 +223,698 @@
                             </sub-events>
                         </event-block>
                     </sub-events>
-                </event-group>
+                </event-block>
+                <event-block sid="4750499102205054">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5837365853157818" type="spPlayer">
+                            <param id="0" name="Instance variable">StateBefore</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Swing&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6196062543354538">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="2094606642492045" type="spPlayer" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="5995309188639996" type="spPlayer">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="618436995852045" type="System">
+                                    <param id="0" name="Variable">FirstSwing</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2027340007225644">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2690976345204917" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="1954787934985448">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="2451891162785718" type="spPlayer">
+                                            <param id="0" name="Side">0</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="5372052958714322" type="spPlayer">
+                                            <param id="0" name="Side">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="821934067591966" type="spPlayer">
+                                            <param id="0" name="Animation">&quot;Swing&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="5108870032477376">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="8027463928557091" type="spPlayer">
+                                                    <param id="0" name="Instance variable">Anchored</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="5564782727016686" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;Swing&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2761288412335442">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="9219036593090493" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="5214357939248699" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;WallUp&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="8712983257049803">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="396884744229679" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="3083034852674131">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="7181246385904066" type="spPlayer">
+                                                    <param id="0" name="Instance variable">Anchored</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="9150996846666159" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;Swing&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="5415747618429558">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="6806472208812823" type="System">
+                                                            <param id="0" name="First value">Line.CurrentLength</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Second value">spPlayer.MinLine</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="5136213923498303" type="spPlayer">
+                                                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="8891815128578466" type="spPlayer">
+                                                            <param id="0" name="Instance variable">JumpTimer</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="6792455508646519">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="6593341159756009" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="2921081821141799" type="spPlayer">
+                                                            <param id="0" name="Animation">&quot;Swing&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="1523270588853447">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="8147464306737057" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="9992992159397751" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="3176287973100126" type="spPlayer">
+                                                    <param id="0" name="Instance variable">JumpTimer</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9299149071035911">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6779110917520905" type="spPlayer">
+                            <param id="0" name="Instance variable">StateBefore</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Jump&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5429988255113716">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="6236024354755773" type="spPlayer" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="5233529798486859" type="spPlayer">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="14" name="Log" sid="3339805781763882" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;herp&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="5968082884699786" type="spPlayer">
+                                    <param id="0" name="Instance variable">JumpEnd</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="2472105713062841" type="spPlayer">
+                                    <param id="0" name="Instance variable">JumpStart</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="7005808170009841">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Play" sid="4403907706236757" type="Audio">
+                                            <param id="0" name="Audio file">SolidGroundStep01</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;WallHit&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6943374781115245">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2213271041184155" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="2775419768758747">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="9959019632636533" type="spPlayer">
+                                            <param id="0" name="Side">0</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="8368609621125771" type="spPlayer">
+                                            <param id="0" name="Side">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="2353987678371666">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="4941573424635237" type="System">
+                                                    <param id="0" name="First value">spPlayer.Platform.VectorY</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="7863129428437025" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;WallUp&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="20420990482455" type="spPlayer">
+                                                    <param id="0" name="Instance variable">JumpEnd</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="4277990076385289" type="spPlayer">
+                                                    <param id="0" name="Instance variable">JumpStart</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="6590387112108143" type="Audio">
+                                                    <param id="0" name="Audio file">SolidGroundStep01</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="208327638283988">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="9772612545316848" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="672430349491362" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;WallHold&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="2340775329228307" type="spPlayer">
+                                                    <param id="0" name="Instance variable">WallHoldTimer</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="9454920551535254" type="spPlayer">
+                                                    <param id="0" name="Instance variable">JumpEnd</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="7723550422326935" type="spPlayer">
+                                                    <param id="0" name="Instance variable">JumpStart</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="9745157615157245" type="Audio">
+                                                    <param id="0" name="Audio file">SolidGroundStep01</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="4767823996695235">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="1120867532153224" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="687441673133062">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="4923922903768792" type="spPlayer">
+                                                    <param id="0" name="Instance variable">Anchored</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block any="1" sid="95607642985282">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="2962699308095168" type="System">
+                                                            <param id="0" name="First value">Line.CurrentLength</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Second value">spPlayer.MinLine</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="5530173628608755" type="System">
+                                                            <param id="0" name="First value">spPlayer.Platform.VectorY</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Second value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="9341858551236251" type="spPlayer">
+                                                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="140242249340252">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="7087076966107619" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="682757754885161" type="spPlayer">
+                                                            <param id="0" name="Animation">&quot;Swing&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="9715397791967328" type="spPlayer">
+                                                            <param id="0" name="Instance variable">JumpEnd</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="9068568978696809" type="spPlayer">
+                                                            <param id="0" name="Instance variable">JumpStart</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="3320469934096092">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="132160160881749" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="5003346466598649" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7166735883228387">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2528534078019238" type="spPlayer">
+                            <param id="0" name="Instance variable">StateBefore</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;WallUp&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1404131032561642">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="9493011826316188" type="spPlayer" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="1579933181454555" type="spPlayer">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="14" name="Log" sid="4507482793633004" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;herp&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5628645852604829">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="9124103582071141" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="1818737488630513">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="4051439043870625" type="spPlayer">
+                                            <param id="0" name="Side">0</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="4739891775581144" type="spPlayer">
+                                            <param id="0" name="Side">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="697622194893005">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="3929420417426454" type="System">
+                                                    <param id="0" name="First value">spPlayer.Platform.VectorY</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="3830779413230278" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;WallUp&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2060783560208909">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="1715586124374488" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="7182994004314004" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;WallHold&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="9572775892410144" type="spPlayer">
+                                                    <param id="0" name="Instance variable">WallHoldTimer</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="214703026370088">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="5424302364355206" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="2554658333576983" type="spPlayer">
+                                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="7909115698553361" type="spPlayer">
+                                            <param id="0" name="Instance variable">JumpTimer</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="1077457950626952">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="7815830361839472" type="spPlayer">
+                                                    <param id="0" name="Instance variable">JumpStart</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="25" name="Play at object" sid="4453419405609484" type="Audio">
+                                                    <param id="0" name="Audio file">Jump</param>
+                                                    <param id="1" name="Loop">0</param>
+                                                    <param id="2" name="Volume">0</param>
+                                                    <param id="3" name="Object">spPlayer</param>
+                                                    <param id="4" name="Inner angle">360</param>
+                                                    <param id="5" name="Outer angle">360</param>
+                                                    <param id="6" name="Outer gain">0</param>
+                                                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3092939760135149">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="653973776157448" type="spPlayer">
+                            <param id="0" name="Instance variable">StateBefore</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;WallHold&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9592680276518387">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="4711891511755449" type="spPlayer" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="5270237408497957" type="spPlayer">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="14" name="Log" sid="2175554681457941" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;herp&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5536853306603823">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6598769048933742" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="8800426634902894">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="3829744905377549" type="spPlayer">
+                                            <param id="0" name="Side">0</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="2653098227824536" type="spPlayer">
+                                            <param id="0" name="Side">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="2131527534607881" type="spPlayer">
+                                            <param id="0" name="Animation">&quot;WallHold&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="5458770916095828">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="3607226717175459" type="System">
+                                                    <param id="0" name="First value">spPlayer.WallHoldTimer</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Second value">spPlayer.WallHoldLimit</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="1127162717763413" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;WallDown&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="9877628278838959">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="4199418494722118" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Add to" sid="8785090282505373" type="spPlayer">
+                                                    <param id="0" name="Instance variable">WallHoldTimer</param>
+                                                    <param id="1" name="Value">dt</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="5938530847030622">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="4754318958889523" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="7506432707884438" type="spPlayer">
+                                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="2181535224075307" type="spPlayer">
+                                            <param id="0" name="Instance variable">JumpTimer</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="6924074139333081">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="7218919541081169" type="spPlayer">
+                                                    <param id="0" name="Instance variable">JumpStart</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="25" name="Play at object" sid="7688446685536742" type="Audio">
+                                                    <param id="0" name="Audio file">Jump</param>
+                                                    <param id="1" name="Loop">0</param>
+                                                    <param id="2" name="Volume">0</param>
+                                                    <param id="3" name="Object">spPlayer</param>
+                                                    <param id="4" name="Inner angle">360</param>
+                                                    <param id="5" name="Outer angle">360</param>
+                                                    <param id="6" name="Outer gain">0</param>
+                                                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="58345476811083">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7601130211057073" type="spPlayer">
+                            <param id="0" name="Instance variable">StateBefore</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;WallDown&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9819154817805215">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="867633182080902" type="spPlayer" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="7092328648296174" type="spPlayer">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="14" name="Log" sid="3158911682227553" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;herp&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9893386342896201">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2410314845445302" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="8512556889347036">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="9623126922759795" type="spPlayer">
+                                            <param id="0" name="Side">0</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="5342776644690991" type="spPlayer">
+                                            <param id="0" name="Side">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="5808720180199671">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="6568906037885538" type="spPlayer">
+                                                    <param id="0" name="Instance variable">Anchored</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="5548317343529207" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;Swing&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="4497285370058653">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="8352104879480351" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="1750479782968752" type="spPlayer">
+                                                    <param id="0" name="Animation">&quot;WallDown&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="228679837614099">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="9409387125713787" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="1178366237531003" type="spPlayer">
+                                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="1951595410055131" type="spPlayer">
+                                            <param id="0" name="Instance variable">JumpTimer</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="103509586861474">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="7455624762048301" type="spPlayer">
+                                                    <param id="0" name="Instance variable">JumpStart</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="25" name="Play at object" sid="9106796287858839" type="Audio">
+                                                    <param id="0" name="Audio file">Jump</param>
+                                                    <param id="1" name="Loop">0</param>
+                                                    <param id="2" name="Volume">0</param>
+                                                    <param id="3" name="Object">spPlayer</param>
+                                                    <param id="4" name="Inner angle">360</param>
+                                                    <param id="5" name="Outer angle">360</param>
+                                                    <param id="6" name="Outer gain">0</param>
+                                                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="2572534074983206">
                     <conditions>
                         <condition id="2" name="Is playing" sid="6974318477961289" type="spPlayer">
@@ -1037,6 +1020,27 @@
                         </action>
                         <action behavior="Platform" id="5" name="Set gravity" sid="1872581595925696" type="spPlayer">
                             <param id="0" name="Gravity">2500</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1770475945080379">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="705772945378927" title="Player controlls">
+            <sub-events>
+                <event-block sid="3164647708195458">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="3262335682021139" type="System">
+                            <param id="0" name="Object">Line</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="9344445070491902" type="Line">
+                            <param id="0" name="Instance variable">CurrentLength</param>
+                            <param id="1" name="Value">distance(spPlayer.X,spPlayer.Y,Line.EndX,Line.EndY)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -2741,7 +2745,7 @@
                     <param id="0" name="Instance variable">StateBefore</param>
                     <param id="1" name="Value">spPlayer.AnimationName</param>
                 </action>
-                <action disabled="1" id="-7" name="Scroll to position" sid="5570210284189068" type="System">
+                <action id="-7" name="Scroll to position" sid="5570210284189068" type="System">
                     <param id="0" name="X">spPlayer.X</param>
                     <param id="1" name="Y">spPlayer.Y</param>
                 </action>
@@ -2822,10 +2826,6 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="5910981287653451">
-            <conditions />
-            <actions />
-        </event-block>
         <event-block sid="7444516034618524">
             <conditions>
                 <condition id="2" name="Key is down" sid="2376018948185326" type="Keyboard">
@@ -2873,102 +2873,6 @@
                     <param id="0" name="Y">scrolly + 10</param>
                 </action>
             </actions>
-        </event-block>
-        <event-block sid="9636255172200603">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="2496703403167719">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="4613738519215688">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="1619053914327395">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="9752950325253004">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="2081048822335399">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="4360066701120806">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="6022343643705835">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="8953511242724752">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="4928661660199101">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="586344794789084">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="2616177480490406">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="7425719719566719">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="218060991161062">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="8460961991168043">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="4727688111304969">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="8733292882689425">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="9513298675002238">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="3662981995543139">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="3836443302608342">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="1232344535298918">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="8860707116979471">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="687823665507807">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="2186638119363379">
-            <conditions />
-            <actions />
         </event-block>
     </events>
 </c2eventsheet>
