@@ -132,7 +132,23 @@
             <object-type name="tmLayout2" sid="525323638541415">
                 <plugin id="Tilemap" />
                 <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\StoneWallTileset.png" />
-                <tiles />
+                <tiles>
+                    <tile id="4">
+                        <collision-poly>
+                            <point x="0" y="0.3125" />
+                            <point x="1" y="0.3125" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </tile>
+                    <tile id="29">
+                        <collision-poly>
+                            <point x="0" y="1" />
+                            <point x="0" y="0.992188" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </tile>
+                </tiles>
             </object-type>
         </object-folder>
         <object-type global="1" name="spPlayer" sid="7723903875284628">
@@ -818,6 +834,29 @@
                             <point x="0.14" y="0.44" />
                             <point x="0.25" y="0.176" />
                             <point x="0.44" y="0.056" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground12" sid="2510736561404795">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\Mountain brown rock seamless texture 2048x2048.jpg" />
+        </object-type>
+        <object-type name="Sprite6" sid="8754858726761441">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="843813897498043" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\light.png">
+                        <collision-poly>
+                            <point x="0.253125" y="0.253125" />
+                            <point x="0.5" y="0.151562" />
+                            <point x="0.746875" y="0.253125" />
+                            <point x="0.85" y="0.5" />
+                            <point x="0.748438" y="0.748438" />
+                            <point x="0.5" y="0.851563" />
+                            <point x="0.251563" y="0.748438" />
+                            <point x="0.151562" y="0.5" />
                         </collision-poly>
                     </frame>
                 </animation>

@@ -588,7 +588,7 @@
             <effects />
         </layer>
         <layer name="UI" sid="7642685220640177">
-            <initially-visible>1</initially-visible>
+            <initially-visible>0</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
             <parallax>
