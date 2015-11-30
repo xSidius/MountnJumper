@@ -929,7 +929,7 @@
                             <param id="0" name="Acceleration">800</param>
                         </action>
                         <action behavior="Platform" id="1" name="Set max speed" sid="8513980519337245" type="spPlayer">
-                            <param id="0" name="Max Speed">600</param>
+                            <param id="0" name="Max Speed">300</param>
                         </action>
                         <action behavior="Platform" id="5" name="Set gravity" sid="2087737340087224" type="spPlayer">
                             <param id="0" name="Gravity">2500</param>
@@ -1010,10 +1010,10 @@
                     </conditions>
                     <actions>
                         <action behavior="Platform" id="3" name="Set deceleration" sid="5283394067938093" type="spPlayer">
-                            <param id="0" name="Deceleration">1000</param>
+                            <param id="0" name="Deceleration">300</param>
                         </action>
                         <action behavior="Platform" id="2" name="Set acceleration" sid="4234234774886823" type="spPlayer">
-                            <param id="0" name="Acceleration">600</param>
+                            <param id="0" name="Acceleration">800</param>
                         </action>
                         <action behavior="Platform" id="1" name="Set max speed" sid="6731012609365402" type="spPlayer">
                             <param id="0" name="Max Speed">600</param>
@@ -1225,6 +1225,9 @@
                                 <action behavior="Platform" id="9" name="Set vector Y" sid="6360490036120738" type="spPlayer">
                                     <param id="0" name="Vector Y">-spPlayer.Platform.JumpStrength</param>
                                 </action>
+                                <action behavior="Platform" disabled="1" id="8" name="Set vector X" sid="727178748307176" type="spPlayer">
+                                    <param id="0" name="Vector X">spPlayer.Platform.VectorX + spPlayer.Platform.VectorX/2</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block any="1" sid="9150801524542407">
@@ -1364,16 +1367,6 @@
                                         </action>
                                         <action behavior="Platform" id="8" name="Set vector X" sid="2212352401534968" type="spPlayer">
                                             <param id="0" name="Vector X">-100</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="7260523859454273">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="7486368522774869" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="1971002639441268" type="spPlayer">
-                                            <param id="0" name="Vector Y">-spPlayer.WallJumpVert</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -2760,6 +2753,10 @@
                     <param id="0" name="Text">LastStep</param>
                 </action>
                 <action id="-3" name="Set position" sid="3859124179417242" type="Sprite6">
+                    <param id="0" name="X">spPlayer.X</param>
+                    <param id="1" name="Y">spPlayer.Y</param>
+                </action>
+                <action id="-3" name="Set position" sid="8699781965227904" type="Sprite7">
                     <param id="0" name="X">spPlayer.X</param>
                     <param id="1" name="Y">spPlayer.Y</param>
                 </action>

@@ -129,26 +129,42 @@
                 <texture original-source="D:\Projekt\Kevin-Sašo projekt\Assets\StoneWallTileset.png" />
                 <tiles />
             </object-type>
-            <object-type name="tmLayout2" sid="525323638541415">
+            <object-type name="tmLayout2" sid="6337903242827852">
                 <plugin id="Tilemap" />
                 <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\StoneWallTileset.png" />
                 <tiles>
-                    <tile id="4">
+                    <tile id="42">
                         <collision-poly>
-                            <point x="0" y="0.3125" />
-                            <point x="1" y="0.3125" />
+                            <point x="1" y="0" />
                             <point x="1" y="1" />
                             <point x="0" y="1" />
                         </collision-poly>
                     </tile>
-                    <tile id="29">
+                    <tile id="44">
                         <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="1" />
                             <point x="0" y="1" />
-                            <point x="0" y="0.992188" />
+                        </collision-poly>
+                    </tile>
+                    <tile id="68">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
                             <point x="0" y="1" />
                         </collision-poly>
                     </tile>
                 </tiles>
+            </object-type>
+            <object-type name="Tilemap3" sid="9292169925328308">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\StoneWallTransparentTileset.png" />
+                <tiles />
+            </object-type>
+            <object-type name="Tilemap4" sid="7934370740732446">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\Tileset_64x64_StoneWallTransparent.png" />
+                <tiles />
             </object-type>
         </object-folder>
         <object-type global="1" name="spPlayer" sid="7723903875284628">
@@ -862,10 +878,30 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Sprite7" sid="7653378024024627">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1067380382164373" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Documents\MountnJumper\Assets\light.png">
+                        <collision-poly>
+                            <point x="0.253125" y="0.253125" />
+                            <point x="0.5" y="0.151562" />
+                            <point x="0.746875" y="0.253125" />
+                            <point x="0.85" y="0.5" />
+                            <point x="0.748438" y="0.748438" />
+                            <point x="0.5" y="0.851563" />
+                            <point x="0.251563" y="0.748438" />
+                            <point x="0.151562" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="LevelLayout" plugin-id="Tilemap" sid="8055901268729403">
             <members>
+                <member>Tilemap4</member>
                 <member>TilemapStoneWall_lvl_2</member>
                 <member>tmHerpetiDerpetiBup</member>
                 <member>tmLayout2</member>
